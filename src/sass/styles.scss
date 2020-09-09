@@ -1,0 +1,23 @@
+@import './fonts';
+@import './mixins.scss';
+@import './variables.scss';
+@import './base.scss';
+@import './grid.scss';
+
+// Sections
+@import './views/SiteHeader.scss';
+@import  './views/Home.scss';
+
+// CSS components
+@import './components/Section.scss';
+@import './components/Container.scss';
+
+// Utils
+@import './utils/util-text.scss';
+@import './utils/util-display.scss';
+@import './utils/util-alignment.scss';
+
+// TODO: remove
+body {
+    background: cornflowerblue
+}

@@ -1,0 +1,41 @@
+.SiteHeader {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px $fullWidthPaddingH-lg;
+    position: fixed;
+    height: $headerHeight;
+    
+    @include md {
+        padding: 30px $fullWidthPaddingH-md;
+    }
+
+    .SiteHeader-logo {
+        width: 98px;
+    }
+
+    .SiteHeader-nav {
+        font-family: $fontMono;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 2.5rem;
+
+        @include sm-down {
+            display: none;       
+        }
+        
+        a {
+            color: $white;
+            text-decoration: none;
+            margin-right: 50px;
+
+            &:last-child{
+                margin-right: 0;
+            }
+
+            @include md {
+                margin-right: 20px;
+            }
+        }
+        
+    }
+}
