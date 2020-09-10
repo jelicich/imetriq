@@ -2,5 +2,9 @@
     height: 100vh;
     width: 100vw;
     overflow: hidden;
-    padding-top: $headerHeight
+    padding: $headerHeight $fullWidthPaddingH-lg 0;
+
+    @include md {
+        padding: $headerHeight $fullWidthPaddingH-md 0;
+    }
 }

@@ -30,14 +30,14 @@ html {
 html,
 body {
   width: 100vw;
-  height: 100vh;
-  overflow: hidden;
   margin: 0;
+  overflow-x: hidden;
 }
 
-/* line 14, src/sass/_base.scss */
+/* line 13, src/sass/_base.scss */
 body {
   font-size: 1.6rem;
+  background-color: #060F1B;
 }
 
 /* line 18, src/sass/_base.scss */
@@ -1290,6 +1290,7 @@ ol {
   justify-content: space-between;
   padding: 30px 50px;
   position: fixed;
+  z-index: 1000;
   height: 90px;
 }
 
@@ -1300,12 +1301,12 @@ ol {
   }
 }
 
-/* line 12, src/sass/views/SiteHeader.scss */
+/* line 13, src/sass/views/SiteHeader.scss */
 .SiteHeader .SiteHeader-logo {
   width: 98px;
 }
 
-/* line 16, src/sass/views/SiteHeader.scss */
+/* line 17, src/sass/views/SiteHeader.scss */
 .SiteHeader .SiteHeader-nav {
   font-family: DecimaMonoPro, monospace;
   font-weight: bold;
@@ -1314,51 +1315,70 @@ ol {
 }
 
 @media only screen and (max-width: 959px) {
-  /* line 16, src/sass/views/SiteHeader.scss */
+  /* line 17, src/sass/views/SiteHeader.scss */
   .SiteHeader .SiteHeader-nav {
     display: none;
   }
 }
 
-/* line 26, src/sass/views/SiteHeader.scss */
+/* line 27, src/sass/views/SiteHeader.scss */
 .SiteHeader .SiteHeader-nav a {
   color: #ffffff;
   text-decoration: none;
   margin-right: 50px;
 }
 
-/* line 31, src/sass/views/SiteHeader.scss */
+/* line 32, src/sass/views/SiteHeader.scss */
 .SiteHeader .SiteHeader-nav a:last-child {
   margin-right: 0;
 }
 
 @media screen and (min-width: 960px) and (max-width: 1263px) {
-  /* line 26, src/sass/views/SiteHeader.scss */
+  /* line 27, src/sass/views/SiteHeader.scss */
   .SiteHeader .SiteHeader-nav a {
     margin-right: 20px;
   }
 }
 
-/* line 1, src/sass/views/Home.scss */
-.Home {
-  padding: 0 50px;
+/* line 3, src/sass/views/Footer.scss */
+.Footer {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  color: #ffffff;
+  font-family: DecimaMonoPro, monospace;
+  text-transform: uppercase;
+  width: 68px;
+  height: 370px;
+  margin-top: -185px;
+  font-size: 12px;
 }
 
-@media screen and (min-width: 960px) and (max-width: 1263px) {
-  /* line 1, src/sass/views/Home.scss */
-  .Home {
-    padding: 0 20px;
-  }
+/* line 15, src/sass/views/Footer.scss */
+.Footer .Footer-text {
+  display: block;
+  transform: rotate(90deg);
+  width: 350px;
+  position: absolute;
+  top: 170px;
+  right: -140px;
 }
 
-/* line 8, src/sass/views/Home.scss */
+/* line 24, src/sass/views/Footer.scss */
+.Footer .Footer-link {
+  position: absolute;
+  bottom: 0;
+}
+
+/* line 3, src/sass/views/Home.scss */
 .Home .Home-innerWrapper {
   display: flex;
   flex-direction: column;
   height: 100%;
+  position: relative;
 }
 
-/* line 14, src/sass/views/Home.scss */
+/* line 10, src/sass/views/Home.scss */
 .Home .Home-title {
   font-family: DecimaMonoPro, monospace;
   font-size: 3.4rem;
@@ -1367,19 +1387,85 @@ ol {
   font-weight: normal;
 }
 
-/* line 22, src/sass/views/Home.scss */
+/* line 18, src/sass/views/Home.scss */
 .Home .Home-mainText {
   font-size: 10rem;
   font-family: DINCondensed, sans-serif;
   color: #ffffff;
   line-height: 0.8;
+  margin-top: calc(-90px - 42px);
+  /*title height*/
 }
 
-/* line 29, src/sass/views/Home.scss */
+/* line 26, src/sass/views/Home.scss */
 .Home .Home-container {
   flex: 1;
   display: flex;
   align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* line 34, src/sass/views/Home.scss */
+.Home .Home-viewMore {
+  width: 200px;
+  position: absolute;
+  bottom: 50px;
+}
+
+/* line 40, src/sass/views/Home.scss */
+.Home .Home-backgroundLeft {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 35vw;
+  background: url("../assets/home-bg-1.jpg");
+  background-position-x: right;
+}
+
+/* line 50, src/sass/views/Home.scss */
+.Home .Home-backgroundRight {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 157vh;
+  width: 65vw;
+  background: url("../assets/home-bg-2.jpg");
+  background-position-x: center;
+}
+
+/* line 1, src/sass/views/About.scss */
+.About {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* line 6, src/sass/views/About.scss */
+.About .About-innerWrapper {
+  position: relative;
+  display: flex;
+  margin-top: -90px;
+  align-items: center;
+}
+
+/* line 13, src/sass/views/About.scss */
+.About .About-text {
+  color: #ffffff;
+  font-family: DecimaMonoPro, monospace;
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+  width: 50vw;
+  margin-left: 32vw;
+}
+
+/* line 22, src/sass/views/About.scss */
+.About .About-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #23CF70;
 }
 
 /* line 1, src/sass/components/Section.scss */
@@ -1387,7 +1473,14 @@ ol {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  padding-top: 90px;
+  padding: 90px 50px 0;
+}
+
+@media screen and (min-width: 960px) and (max-width: 1263px) {
+  /* line 1, src/sass/components/Section.scss */
+  .Section {
+    padding: 90px 20px 0;
+  }
 }
 
 /* line 1, src/sass/components/Container.scss */
@@ -1443,9 +1536,4 @@ ol {
 /* line 17, src/sass/utils/util-alignment.scss */
 .u-flexAlignCenter {
   align-items: center;
-}
-
-/* line 21, src/sass/styles.scss */
-body {
-  background: cornflowerblue;
 }

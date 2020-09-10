@@ -3,6 +3,7 @@
     justify-content: space-between;
     padding: 30px $fullWidthPaddingH-lg;
     position: fixed;
+    z-index: 1000;
     height: $headerHeight;
     
     @include md {
