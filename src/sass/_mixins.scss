@@ -57,14 +57,21 @@ $xl-breakpoint: 1904px;
     {@content;} 
 } 
 
-// On screens that are 1363px wide or above
+// On screens that are 1363px wide or below
 @mixin md-down {
     @media only screen and (max-width: $lg-breakpoint - 1)
     {@content;} 
 } 
 
-// On screens that are 1903px wide or above
+// On screens that are 1903px wide or below
 @mixin lg-down {
     @media only screen and (max-width: $xl-breakpoint - 1)
     {@content;} 
+}
+
+// Aspect ratio 
+// (min-aspect-ratio: ~'3/4') and (max-aspect-ratio: ~'1/1')
+@mixin sq-res {
+    @media (min-aspect-ratio: 1/1) and (max-aspect-ratio: 64/35)
+    {@content;}
 }

@@ -1,0 +1,106 @@
+.HowItWorks {
+    background: $white;
+
+    .HowItWorks-innerWrapper {
+        height: 100%;
+        margin-top: -$headerHeight;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include lg-down {
+            margin-top: auto;
+        }
+    }
+
+    h1 {
+        font-size: 4rem;
+        width: 50%;
+        margin-left: 50%;
+        margin-bottom: 100px;
+
+        @include lg-down {
+            font-size: 2.7rem;
+            margin-bottom: 20px;
+        }
+    }
+
+    .HowItWorks-contentContainer {
+        display: flex;
+
+        h2 {
+            font-family: $fontBody;
+            font-size: 2rem;
+            text-align: center;
+            padding: 40px 0;
+
+            @include lg-down {
+                font-size: 1.8rem;
+            }
+        }
+
+        p {
+            font-size: 2rem;
+            padding: 40px;
+
+            @include lg-down {
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    .HowItWorks-stepWrapper {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        border-left: 1px solid $black;
+
+        .HowItWorks-stepWrapperInner {
+            display: flex;
+        }
+    }
+
+    .HowItWorks-step {
+        flex: 1;
+    }
+
+    .HowItWorks-chip {
+        padding: 30px 0;
+        text-align: center;
+        font-size: 4rem;
+        
+        @include lg-down {
+            font-size: 2.5rem;
+        }
+
+        h3 {
+            color: $white;
+        }
+    }
+
+    .HowItWorks-chip.nth1 {
+        background: $black;
+        border-radius: 60px 0 0 60px;
+    }
+
+    .HowItWorks-chip.nth2 {
+        background: $darkGray;
+    }
+
+    .HowItWorks-chip.nth3 {
+        background: $primaryLight;
+        
+        h3 {
+            color: $black;
+        }
+    }
+
+    .HowItWorks-chip.nth4 {
+        background: $primary;
+        border-radius: 0 60px 60px 0;
+        
+        h3 {
+            color: $black;
+        }
+    }
+}

@@ -1,0 +1,127 @@
+.Solutions {
+    background-color: $white;
+    background-image: url('../assets/imetriq-macbook-pro-report.png');
+    background-repeat: no-repeat;
+    background-size: 49vw;
+    background-position: 0vw bottom;
+
+    @include lg-down {
+        background-size: 49vw;
+        background-position: 0 bottom;
+
+        
+    }
+    @include sq-res {
+        background-position: 0;
+    }
+
+    .Solutions-innerWrapper {
+        position: relative;
+        display: flex;
+        height: 100%;
+    }
+
+    .Solutions-column {
+        width: 50%;
+    }
+
+    .Solutions-title {
+        font-size: 4rem;
+
+        @include lg-down {
+            font-size: 2.7rem;
+        }
+    }
+
+    .Solutions-titleHighlight {
+        color: $primary;
+        font-size: 9.5rem;
+        display: inline-block;
+        margin-top: 1.8rem;
+
+        @include lg-down {
+            font-size: 5rem;
+            margin-top: 1rem;
+        }
+    }
+
+    .Solutions-titleIcon {
+        display: inline-block;
+        width: 100px;
+
+        @include lg-down {
+            width: 50px;
+        }
+    }
+
+    .Solutions-contentContainer {
+        display: flex;
+        flex-flow: row wrap;
+        align-content: center;
+    }
+
+    .Solutions-contentBlock {
+        width: 50%;
+        padding: 0 20px;
+        margin-bottom: 50px;
+
+        .Solutions-iconContainer {
+            display: flex;
+            height: 120px;
+            align-items: center;
+
+            @include lg-down {
+                height: 50px;
+            }
+        }
+
+        &:nth-child(1) .Solutions-iconContainer {
+            width: 140px;
+            
+            @include lg-down {
+                width: 90px;
+            }
+        }
+
+        &:nth-child(2) .Solutions-iconContainer {
+            width: 120px;
+
+            @include lg-down {
+                width: 80px;
+            }
+        }
+
+        &:nth-child(3) .Solutions-iconContainer {
+            width: 110px;
+
+            @include lg-down {
+                width: 70px;
+            }
+        }
+
+        &:nth-child(4) .Solutions-iconContainer {
+            width: 80px;
+
+            @include lg-down {
+                width: 60px;
+            }
+        }
+
+        h2 {
+            font-size: 3rem;
+            margin: 20px 0;
+
+            @include lg-down {
+                font-size: 2rem;
+            }
+        }   
+
+        p {
+            font-size: 2rem;
+
+            @include lg-down {
+                font-size: 1.4rem;
+            }
+        }
+    }
+}

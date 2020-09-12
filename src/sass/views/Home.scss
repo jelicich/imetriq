@@ -10,17 +10,18 @@
     .Home-title {
         font-family: $fontMono;
         font-size: 3.4rem;
-        text-transform: uppercase;
         color: $white;
         font-weight: normal;
     }
 
     .Home-mainText {
-        font-size: 10rem;
-        font-family: $fontHeading;
+        font-size: 13rem;
         color: $white;
-        line-height: $headingLineHeight;
         margin-top: calc(#{-$headerHeight} - 42px); /*title height*/
+
+        @include lg-down{
+            font-size: 9rem;
+        }
     }
 
     .Home-container {
@@ -32,7 +33,7 @@
     }
 
     .Home-viewMore {
-        width: 200px;
+        width: 10vw;
         position: absolute;
         bottom: $fullWidthPaddingH-lg;
     }

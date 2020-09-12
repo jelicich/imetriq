@@ -32,15 +32,17 @@ body {
   width: 100vw;
   margin: 0;
   overflow-x: hidden;
+  font-family: HelveticaNeue, sans-serif;
+  color: #82878D;
 }
 
-/* line 13, src/sass/_base.scss */
+/* line 15, src/sass/_base.scss */
 body {
   font-size: 1.6rem;
   background-color: #060F1B;
 }
 
-/* line 18, src/sass/_base.scss */
+/* line 20, src/sass/_base.scss */
 *,
 *:before,
 *:after {
@@ -49,17 +51,21 @@ body {
   box-sizing: inherit;
 }
 
-/* line 26, src/sass/_base.scss */
+/* line 28, src/sass/_base.scss */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
+  color: #000000;
   margin: 0;
+  text-transform: uppercase;
+  font-family: DINCondensed, sans-serif;
+  line-height: 0.85;
 }
 
-/* line 34, src/sass/_base.scss */
+/* line 40, src/sass/_base.scss */
 h1 strong,
 h2 strong,
 h3 strong,
@@ -69,25 +75,27 @@ h6 strong {
   font-weight: 800;
 }
 
-/* line 38, src/sass/_base.scss */
+/* line 44, src/sass/_base.scss */
 p {
   margin: 0;
+  letter-spacing: 0.3px;
+  line-height: 1.3;
 }
 
-/* line 42, src/sass/_base.scss */
+/* line 50, src/sass/_base.scss */
 ul,
 ol {
   margin: 0;
   padding: 0;
 }
 
-/* line 48, src/sass/_base.scss */
+/* line 56, src/sass/_base.scss */
 img {
   display: block;
   width: 100%;
 }
 
-/* line 53, src/sass/_base.scss */
+/* line 61, src/sass/_base.scss */
 ul,
 ol {
   margin: 0;
@@ -95,7 +103,12 @@ ol {
   list-style: none;
 }
 
-/* line 60, src/sass/_base.scss */
+/* line 68, src/sass/_base.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 72, src/sass/_base.scss */
 .v-application--wrap {
   min-height: 100% !important;
 }
@@ -1323,12 +1336,11 @@ ol {
 
 /* line 27, src/sass/views/SiteHeader.scss */
 .SiteHeader .SiteHeader-nav a {
-  color: #ffffff;
-  text-decoration: none;
+  color: #FFFFFF;
   margin-right: 50px;
 }
 
-/* line 32, src/sass/views/SiteHeader.scss */
+/* line 31, src/sass/views/SiteHeader.scss */
 .SiteHeader .SiteHeader-nav a:last-child {
   margin-right: 0;
 }
@@ -1345,7 +1357,7 @@ ol {
   position: fixed;
   right: 20px;
   top: 50%;
-  color: #ffffff;
+  color: #FFFFFF;
   font-family: DecimaMonoPro, monospace;
   text-transform: uppercase;
   width: 68px;
@@ -1382,22 +1394,26 @@ ol {
 .Home .Home-title {
   font-family: DecimaMonoPro, monospace;
   font-size: 3.4rem;
-  text-transform: uppercase;
-  color: #ffffff;
+  color: #FFFFFF;
   font-weight: normal;
 }
 
-/* line 18, src/sass/views/Home.scss */
+/* line 17, src/sass/views/Home.scss */
 .Home .Home-mainText {
-  font-size: 10rem;
-  font-family: DINCondensed, sans-serif;
-  color: #ffffff;
-  line-height: 0.8;
+  font-size: 13rem;
+  color: #FFFFFF;
   margin-top: calc(-90px - 42px);
   /*title height*/
 }
 
-/* line 26, src/sass/views/Home.scss */
+@media only screen and (max-width: 1903px) {
+  /* line 17, src/sass/views/Home.scss */
+  .Home .Home-mainText {
+    font-size: 9rem;
+  }
+}
+
+/* line 27, src/sass/views/Home.scss */
 .Home .Home-container {
   flex: 1;
   display: flex;
@@ -1406,14 +1422,14 @@ ol {
   justify-content: center;
 }
 
-/* line 34, src/sass/views/Home.scss */
+/* line 35, src/sass/views/Home.scss */
 .Home .Home-viewMore {
-  width: 200px;
+  width: 10vw;
   position: absolute;
   bottom: 50px;
 }
 
-/* line 40, src/sass/views/Home.scss */
+/* line 41, src/sass/views/Home.scss */
 .Home .Home-backgroundLeft {
   position: absolute;
   top: 0;
@@ -1424,7 +1440,7 @@ ol {
   background-position-x: right;
 }
 
-/* line 50, src/sass/views/Home.scss */
+/* line 51, src/sass/views/Home.scss */
 .Home .Home-backgroundRight {
   position: absolute;
   top: 0;
@@ -1452,7 +1468,7 @@ ol {
 
 /* line 13, src/sass/views/About.scss */
 .About .About-text {
-  color: #ffffff;
+  color: #FFFFFF;
   font-family: DecimaMonoPro, monospace;
   font-size: 2.5rem;
   margin-bottom: 2.5rem;
@@ -1460,12 +1476,492 @@ ol {
   margin-left: 32vw;
 }
 
-/* line 22, src/sass/views/About.scss */
+@media only screen and (max-width: 1903px) {
+  /* line 13, src/sass/views/About.scss */
+  .About .About-text {
+    font-size: 2rem;
+  }
+}
+
+/* line 26, src/sass/views/About.scss */
 .About .About-circle {
   width: 60px;
   height: 60px;
   border-radius: 50%;
   background-color: #23CF70;
+}
+
+/* line 1, src/sass/views/Solutions.scss */
+.Solutions {
+  background-color: #FFFFFF;
+  background-image: url("../assets/imetriq-macbook-pro-report.png");
+  background-repeat: no-repeat;
+  background-size: 49vw;
+  background-position: 0vw bottom;
+}
+
+@media only screen and (max-width: 1903px) {
+  /* line 1, src/sass/views/Solutions.scss */
+  .Solutions {
+    background-size: 49vw;
+    background-position: 0 bottom;
+  }
+}
+
+@media (min-aspect-ratio: 1 / 1) and (max-aspect-ratio: 64 / 35) {
+  /* line 1, src/sass/views/Solutions.scss */
+  .Solutions {
+    background-position: 0;
+  }
+}
+
+/* line 18, src/sass/views/Solutions.scss */
+.Solutions .Solutions-innerWrapper {
+  position: relative;
+  display: flex;
+  height: 100%;
+}
+
+/* line 24, src/sass/views/Solutions.scss */
+.Solutions .Solutions-column {
+  width: 50%;
+}
+
+/* line 28, src/sass/views/Solutions.scss */
+.Solutions .Solutions-title {
+  font-size: 4rem;
+}
+
+@media only screen and (max-width: 1903px) {
+  /* line 28, src/sass/views/Solutions.scss */
+  .Solutions .Solutions-title {
+    font-size: 2.7rem;
+  }
+}
+
+/* line 36, src/sass/views/Solutions.scss */
+.Solutions .Solutions-titleHighlight {
+  color: #23CF70;
+  font-size: 9.5rem;
+  display: inline-block;
+  margin-top: 1.8rem;
+}
+
+@media only screen and (max-width: 1903px) {
+  /* line 36, src/sass/views/Solutions.scss */
+  .Solutions .Solutions-titleHighlight {
+    font-size: 5rem;
+    margin-top: 1rem;
+  }
+}
+
+/* line 48, src/sass/views/Solutions.scss */
+.Solutions .Solutions-titleIcon {
+  display: inline-block;
+  width: 100px;
+}
+
+@media only screen and (max-width: 1903px) {
+  /* line 48, src/sass/views/Solutions.scss */
+  .Solutions .Solutions-titleIcon {
+    width: 50px;
+  }
+}
+
+/* line 57, src/sass/views/Solutions.scss */
+.Solutions .Solutions-contentContainer {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+}
+
+/* line 63, src/sass/views/Solutions.scss */
+.Solutions .Solutions-contentBlock {
+  width: 50%;
+  padding: 0 20px;
+  margin-bottom: 50px;
+}
+
+/* line 68, src/sass/views/Solutions.scss */
+.Solutions .Solutions-contentBlock .Solutions-iconContainer {
+  display: flex;
+  height: 120px;
+  align-items: center;
+}
+
+@media only screen and (max-width: 1903px) {
+  /* line 68, src/sass/views/Solutions.scss */
+  .Solutions .Solutions-contentBlock .Solutions-iconContainer {
+    height: 50px;
+  }
+}
+
+/* line 78, src/sass/views/Solutions.scss */
+.Solutions .Solutions-contentBlock:nth-child(1) .Solutions-iconContainer {
+  width: 140px;
+}
+
+@media only screen and (max-width: 1903px) {
+  /* line 78, src/sass/views/Solutions.scss */
+  .Solutions .Solutions-contentBlock:nth-child(1) .Solutions-iconContainer {
+    width: 90px;
+  }
+}
+
+/* line 86, src/sass/views/Solutions.scss */
+.Solutions .Solutions-contentBlock:nth-child(2) .Solutions-iconContainer {
+  width: 120px;
+}
+
+@media only screen and (max-width: 1903px) {
+  /* line 86, src/sass/views/Solutions.scss */
+  .Solutions .Solutions-contentBlock:nth-child(2) .Solutions-iconContainer {
+    width: 80px;
+  }
+}
+
+/* line 94, src/sass/views/Solutions.scss */
+.Solutions .Solutions-contentBlock:nth-child(3) .Solutions-iconContainer {
+  width: 110px;
+}
+
+@media only screen and (max-width: 1903px) {
+  /* line 94, src/sass/views/Solutions.scss */
+  .Solutions .Solutions-contentBlock:nth-child(3) .Solutions-iconContainer {
+    width: 70px;
+  }
+}
+
+/* line 102, src/sass/views/Solutions.scss */
+.Solutions .Solutions-contentBlock:nth-child(4) .Solutions-iconContainer {
+  width: 80px;
+}
+
+@media only screen and (max-width: 1903px) {
+  /* line 102, src/sass/views/Solutions.scss */
+  .Solutions .Solutions-contentBlock:nth-child(4) .Solutions-iconContainer {
+    width: 60px;
+  }
+}
+
+/* line 110, src/sass/views/Solutions.scss */
+.Solutions .Solutions-contentBlock h2 {
+  font-size: 3rem;
+  margin: 20px 0;
+}
+
+@media only screen and (max-width: 1903px) {
+  /* line 110, src/sass/views/Solutions.scss */
+  .Solutions .Solutions-contentBlock h2 {
+    font-size: 2rem;
+  }
+}
+
+/* line 119, src/sass/views/Solutions.scss */
+.Solutions .Solutions-contentBlock p {
+  font-size: 2rem;
+}
+
+@media only screen and (max-width: 1903px) {
+  /* line 119, src/sass/views/Solutions.scss */
+  .Solutions .Solutions-contentBlock p {
+    font-size: 1.4rem;
+  }
+}
+
+/* line 1, src/sass/views/HowItWorks.scss */
+.HowItWorks {
+  background: #FFFFFF;
+}
+
+/* line 4, src/sass/views/HowItWorks.scss */
+.HowItWorks .HowItWorks-innerWrapper {
+  height: 100%;
+  margin-top: -90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 1903px) {
+  /* line 4, src/sass/views/HowItWorks.scss */
+  .HowItWorks .HowItWorks-innerWrapper {
+    margin-top: auto;
+  }
+}
+
+/* line 16, src/sass/views/HowItWorks.scss */
+.HowItWorks h1 {
+  font-size: 4rem;
+  width: 50%;
+  margin-left: 50%;
+  margin-bottom: 100px;
+}
+
+@media only screen and (max-width: 1903px) {
+  /* line 16, src/sass/views/HowItWorks.scss */
+  .HowItWorks h1 {
+    font-size: 2.7rem;
+    margin-bottom: 20px;
+  }
+}
+
+/* line 28, src/sass/views/HowItWorks.scss */
+.HowItWorks .HowItWorks-contentContainer {
+  display: flex;
+}
+
+/* line 31, src/sass/views/HowItWorks.scss */
+.HowItWorks .HowItWorks-contentContainer h2 {
+  font-family: HelveticaNeue, sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  padding: 40px 0;
+}
+
+@media only screen and (max-width: 1903px) {
+  /* line 31, src/sass/views/HowItWorks.scss */
+  .HowItWorks .HowItWorks-contentContainer h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* line 42, src/sass/views/HowItWorks.scss */
+.HowItWorks .HowItWorks-contentContainer p {
+  font-size: 2rem;
+  padding: 40px;
+}
+
+@media only screen and (max-width: 1903px) {
+  /* line 42, src/sass/views/HowItWorks.scss */
+  .HowItWorks .HowItWorks-contentContainer p {
+    font-size: 1.4rem;
+  }
+}
+
+/* line 52, src/sass/views/HowItWorks.scss */
+.HowItWorks .HowItWorks-stepWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  border-left: 1px solid #000000;
+}
+
+/* line 58, src/sass/views/HowItWorks.scss */
+.HowItWorks .HowItWorks-stepWrapper .HowItWorks-stepWrapperInner {
+  display: flex;
+}
+
+/* line 63, src/sass/views/HowItWorks.scss */
+.HowItWorks .HowItWorks-step {
+  flex: 1;
+}
+
+/* line 67, src/sass/views/HowItWorks.scss */
+.HowItWorks .HowItWorks-chip {
+  padding: 30px 0;
+  text-align: center;
+  font-size: 4rem;
+}
+
+@media only screen and (max-width: 1903px) {
+  /* line 67, src/sass/views/HowItWorks.scss */
+  .HowItWorks .HowItWorks-chip {
+    font-size: 2.5rem;
+  }
+}
+
+/* line 76, src/sass/views/HowItWorks.scss */
+.HowItWorks .HowItWorks-chip h3 {
+  color: #FFFFFF;
+}
+
+/* line 81, src/sass/views/HowItWorks.scss */
+.HowItWorks .HowItWorks-chip.nth1 {
+  background: #000000;
+  border-radius: 60px 0 0 60px;
+}
+
+/* line 86, src/sass/views/HowItWorks.scss */
+.HowItWorks .HowItWorks-chip.nth2 {
+  background: #3B3B47;
+}
+
+/* line 90, src/sass/views/HowItWorks.scss */
+.HowItWorks .HowItWorks-chip.nth3 {
+  background: #77F971;
+}
+
+/* line 93, src/sass/views/HowItWorks.scss */
+.HowItWorks .HowItWorks-chip.nth3 h3 {
+  color: #000000;
+}
+
+/* line 98, src/sass/views/HowItWorks.scss */
+.HowItWorks .HowItWorks-chip.nth4 {
+  background: #23CF70;
+  border-radius: 0 60px 60px 0;
+}
+
+/* line 102, src/sass/views/HowItWorks.scss */
+.HowItWorks .HowItWorks-chip.nth4 h3 {
+  color: #000000;
+}
+
+/* line 1, src/sass/views/Contact.scss */
+.Contact {
+  background-image: url("../assets/contact-bg-1.jpg");
+  background-size: 70vw;
+  background-repeat: no-repeat;
+  background-position: right center;
+  position: relative;
+  display: flex;
+}
+
+/* line 9, src/sass/views/Contact.scss */
+.Contact .Contact-innerWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: -90px;
+  justify-content: center;
+}
+
+/* line 17, src/sass/views/Contact.scss */
+.Contact .Contact-innerWrapper h1 {
+  font-size: 10rem;
+  color: #23CF70;
+}
+
+@media only screen and (max-width: 1903px) {
+  /* line 17, src/sass/views/Contact.scss */
+  .Contact .Contact-innerWrapper h1 {
+    font-size: 6rem;
+  }
+}
+
+/* line 26, src/sass/views/Contact.scss */
+.Contact .Contact-innerWrapper h2 {
+  font-size: 4rem;
+  color: #82878D;
+}
+
+@media only screen and (max-width: 1903px) {
+  /* line 26, src/sass/views/Contact.scss */
+  .Contact .Contact-innerWrapper h2 {
+    font-size: 2.5rem;
+  }
+}
+
+/* line 35, src/sass/views/Contact.scss */
+.Contact .Contact-innerWrapper .Contact-inputContainer {
+  display: flex;
+}
+
+/* line 39, src/sass/views/Contact.scss */
+.Contact .Contact-innerWrapper input {
+  font-size: 4rem;
+  padding: 25px 50px 15px;
+  border: none;
+  margin: 0;
+  height: 88px;
+  font-family: DINCondensed, sans-serif;
+  width: 40%;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 1903px) {
+  /* line 39, src/sass/views/Contact.scss */
+  .Contact .Contact-innerWrapper input {
+    font-size: 2.5rem;
+    height: 66px;
+  }
+}
+
+/* line 54, src/sass/views/Contact.scss */
+.Contact .Contact-innerWrapper input:first-child {
+  border-radius: 44px 0 0 44px;
+  border-right: 1px solid #000000;
+}
+
+@media only screen and (max-width: 1903px) {
+  /* line 54, src/sass/views/Contact.scss */
+  .Contact .Contact-innerWrapper input:first-child {
+    border-radius: 33px 0 0 33px;
+  }
+}
+
+/* line 63, src/sass/views/Contact.scss */
+.Contact .Contact-innerWrapper input:last-child {
+  border-radius: 0 44px 44px 0;
+}
+
+@media only screen and (max-width: 1903px) {
+  /* line 63, src/sass/views/Contact.scss */
+  .Contact .Contact-innerWrapper input:last-child {
+    border-radius: 0 33px 33px 0;
+  }
+}
+
+/* line 72, src/sass/views/Contact.scss */
+.Contact .Contact-innerWrapper button {
+  background: #23CF70;
+  font-size: 4rem;
+  font-family: DINCondensed, sans-serif;
+  text-transform: uppercase;
+  border: none;
+  height: 88px;
+  padding: 25px 50px 15px;
+  border-radius: 44px;
+  margin-top: 50px;
+  display: flex;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1903px) {
+  /* line 72, src/sass/views/Contact.scss */
+  .Contact .Contact-innerWrapper button {
+    height: 66px;
+    font-size: 2.5rem;
+    border-radius: 33px;
+    padding: 20px 50px 15px;
+  }
+}
+
+/* line 92, src/sass/views/Contact.scss */
+.Contact .Contact-innerWrapper button img {
+  transform: rotate(180deg);
+  display: inline-block;
+  width: 60px;
+  margin-left: 60px;
+}
+
+@media only screen and (max-width: 1903px) {
+  /* line 92, src/sass/views/Contact.scss */
+  .Contact .Contact-innerWrapper button img {
+    width: 40px;
+    margin-left: 40px;
+  }
+}
+
+/* line 105, src/sass/views/Contact.scss */
+.Contact .Contact-innerWrapper .Contact-linksContainer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  height: 50px;
+}
+
+/* line 114, src/sass/views/Contact.scss */
+.Contact .Contact-innerWrapper .Contact-linksContainer a {
+  text-transform: uppercase;
+  font-family: DecimaMonoPro, monospace;
+  color: #82878D;
+  font-size: 2rem;
 }
 
 /* line 1, src/sass/components/Section.scss */
@@ -1498,7 +1994,7 @@ ol {
 @media only screen and (min-width: 1264px) {
   /* line 1, src/sass/components/Container.scss */
   .Container {
-    max-width: 1185px;
+    max-width: 80vw;
   }
 }
 

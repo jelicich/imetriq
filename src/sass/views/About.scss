@@ -17,6 +17,10 @@
         margin-bottom: 2.5rem;
         width: 50vw;
         margin-left: 32vw;
+
+        @include lg-down{
+            font-size: 2rem;
+        }
     }
 
     .About-circle {  

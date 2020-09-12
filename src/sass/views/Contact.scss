@@ -1,0 +1,122 @@
+.Contact {
+    background-image: url('../assets/contact-bg-1.jpg');
+    background-size: 70vw;
+    background-repeat: no-repeat;
+    background-position: right center;
+    position: relative;
+    display: flex;
+    
+    .Contact-innerWrapper {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-top: -$headerHeight;
+        justify-content: center;
+
+        h1 {
+            font-size: 10rem;
+            color: $primary;
+
+            @include lg-down{
+                font-size: 6rem;
+            }
+        }
+
+        h2 {
+            font-size: 4rem;
+            color: $textColor;
+
+            @include lg-down {
+                font-size: 2.5rem;
+            }
+        }
+
+        .Contact-inputContainer {
+            display: flex;
+        }
+
+        input {
+            font-size: 4rem;
+            padding: 25px 50px 15px;
+            border: none;
+            margin: 0;
+            height: 88px;
+            font-family: $fontHeading;
+            width: 40%;
+            text-transform: uppercase;
+
+            @include lg-down {
+                font-size: 2.5rem;
+                height: 66px;
+            }
+
+            &:first-child {
+                border-radius: 44px 0 0 44px;
+                border-right: 1px solid $black;
+
+                @include lg-down {
+                    border-radius: 33px 0 0 33px;
+                }
+            }
+
+            &:last-child {
+                border-radius: 0 44px 44px 0;
+
+                @include lg-down {
+                    border-radius: 0 33px 33px 0;
+                }
+            }
+        }
+
+        button {
+            background: $primary;
+            font-size: 4rem;
+            font-family: $fontHeading;
+            text-transform: uppercase;
+            border: none;
+            height: 88px;
+            padding: 25px 50px 15px;
+            border-radius: 44px;
+            margin-top: 50px;
+            display: flex;
+            cursor: pointer;
+
+            @include lg-down {
+                height: 66px;
+                font-size: 2.5rem;
+                border-radius: 33px;
+                padding: 20px 50px 15px;
+            }
+            
+            img {
+                transform: rotate(180deg);
+                display: inline-block;
+                width: 60px;
+                margin-left: 60px;
+
+                @include lg-down {
+                    width: 40px;
+                    margin-left: 40px;
+                }
+            }
+        }
+
+        .Contact-linksContainer {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 40%;
+            display: flex;
+            justify-content: space-around;
+            height: 50px;
+
+            a {
+                text-transform: uppercase;
+                font-family: $fontMono;
+                color: $textColor;
+                font-size: 2rem;
+            }
+        }
+    }
+}
