@@ -10,6 +10,7 @@ var settings = {
 	styles: true,
 	svgs: true,
 	copy: true,
+	assets: true,
 	reload: true
 };
 
@@ -27,7 +28,8 @@ var paths = {
 		output: 'dist/js/'
 	},
 	styles: {
-		input: 'src/sass/**/*.{scss,sass}',
+		input: 'src/sass/styles.scss',
+		//input: 'src/sass/**/*.{scss,sass}',
 		output: 'dist/css/'
 	},
 	svgs: {
@@ -37,6 +39,10 @@ var paths = {
 	copy: {
 		input: 'src/copy/**/*',
 		output: 'dist/'
+	},
+	assets: {
+		input: 'src/assets/**/*',
+		output: 'dist/assets'
 	},
 	reload: './dist/'
 };
@@ -83,8 +89,12 @@ var postcss = require('gulp-postcss');
 var prefix = require('autoprefixer');
 var minify = require('cssnano');
 
-// SVGs
+// SVGs 
 var svgmin = require('gulp-svgmin');
+
+// Images
+var imagemin = require('gulp-imagemin');
+
 
 // HTML templates
 var nunjucksRender = require('gulp-nunjucks-render');
@@ -228,6 +238,17 @@ var buildSVGs = function (done) {
 
 };
 
+// Optimize assets
+var buildAssets = function (done) {
+
+	// Make sure this feature is activated before running
+	if (!settings.assets) return done();
+
+	return src(paths.assets.input)
+		.pipe(imagemin())
+		.pipe(dest(paths.assets.output));
+}
+
 // Copy static files into output folder
 var copyFiles = function (done) {
 
@@ -298,6 +319,7 @@ exports.default = series(
 		lintScripts,
 		buildStyles,
 		buildSVGs,
+		buildAssets,
 		copyFiles
 	)
 );

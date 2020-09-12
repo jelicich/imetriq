@@ -1,0 +1,28 @@
+$footerWidth: 68px;
+
+.Footer {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    color: $white;
+    font-family: $fontMono;
+    text-transform: uppercase;
+    width: $footerWidth;
+    height: 370px;
+    margin-top: -185px;
+    font-size: 12px;
+
+    .Footer-text {
+        display: block;
+        transform: rotate(90deg);
+        width: 350px;
+        position: absolute;
+        top: 170px;
+        right: -140px;
+    }
+
+    .Footer-link {
+        position: absolute;
+        bottom: 0;
+    }
+}

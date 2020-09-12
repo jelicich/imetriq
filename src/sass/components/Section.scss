@@ -1,0 +1,10 @@
+.Section {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    padding: $headerHeight $fullWidthPaddingH-lg 0;
+
+    @include md {
+        padding: $headerHeight $fullWidthPaddingH-md 0;
+    }
+}

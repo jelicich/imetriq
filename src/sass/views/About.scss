@@ -1,0 +1,28 @@
+.About {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .About-innerWrapper {
+        position: relative;
+        display: flex;
+        margin-top: -$headerHeight;
+        align-items: center;
+    }
+
+    .About-text {
+        color: $white;
+        font-family: $fontMono;
+        font-size: 2.5rem;
+        margin-bottom: 2.5rem;
+        width: 50vw;
+        margin-left: 32vw;
+    }
+
+    .About-circle {  
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: $primary;
+    }
+}

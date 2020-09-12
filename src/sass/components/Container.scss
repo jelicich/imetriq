@@ -1,0 +1,13 @@
+.Container {
+    margin: 0 auto;
+
+    @include md-up {
+        max-width: 900px;
+    }
+    
+    @include lg-up {
+        max-width: 1185px;
+    }
+    
+    
+}

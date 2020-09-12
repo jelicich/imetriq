@@ -1,0 +1,59 @@
+.Home {
+
+    .Home-innerWrapper {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        position: relative;
+    }
+    
+    .Home-title {
+        font-family: $fontMono;
+        font-size: 3.4rem;
+        text-transform: uppercase;
+        color: $white;
+        font-weight: normal;
+    }
+
+    .Home-mainText {
+        font-size: 10rem;
+        font-family: $fontHeading;
+        color: $white;
+        line-height: $headingLineHeight;
+        margin-top: calc(#{-$headerHeight} - 42px); /*title height*/
+    }
+
+    .Home-container {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .Home-viewMore {
+        width: 200px;
+        position: absolute;
+        bottom: $fullWidthPaddingH-lg;
+    }
+
+    .Home-backgroundLeft {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 35vw;
+        background: url('../assets/home-bg-1.jpg');
+        background-position-x: right;
+    }
+
+    .Home-backgroundRight {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 157vh;
+        width: 65vw;
+        background: url('../assets/home-bg-2.jpg');
+        background-position-x: center;
+    }
+}

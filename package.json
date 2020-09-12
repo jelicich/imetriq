@@ -18,7 +18,11 @@
     "homepage": "https://github.com/jelicich/imetriq#readme",
     "dependencies": {
         "gulp": "^4.0.2",
-        "gulp-cli": "^2.3.0"
+        "gulp-cli": "^2.3.0",
+        "imagemin-gifsicle": "^7.0.0",
+        "imagemin-jpegtran": "^7.0.0",
+        "imagemin-optipng": "^8.0.0",
+        "imagemin-svgo": "^8.0.0"
     },
     "devDependencies": {
         "autoprefixer": "9.6.1",
@@ -29,6 +33,7 @@
         "gulp-concat": "2.6.1",
         "gulp-flatmap": "1.0.2",
         "gulp-header": "2.0.5",
+        "gulp-imagemin": "^7.1.0",
         "gulp-jshint": "2.1.0",
         "gulp-nunjucks-render": "^2.2.3",
         "gulp-optimize-js": "1.1.0",
