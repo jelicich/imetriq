@@ -46,6 +46,7 @@
         width: 35vw;
         background: url('../assets/home-bg-1.jpg');
         background-position-x: right;
+        background-repeat: no-repeat;
     }
 
     .Home-backgroundRight {
@@ -56,5 +57,6 @@
         width: 65vw;
         background: url('../assets/home-bg-2.jpg');
         background-position-x: center;
+        background-repeat: no-repeat;
     }
 }

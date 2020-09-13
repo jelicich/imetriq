@@ -27,6 +27,7 @@
         a {
             color: $white;
             margin-right: 50px;
+            transition: color .5s ease-in-out;
 
             &:last-child{
                 margin-right: 0;
@@ -37,5 +38,13 @@
             }
         }
         
+    }
+
+    &--dark {
+        .SiteHeader-nav {
+            a {
+                color: $black;
+            }
+        }
     }
 }

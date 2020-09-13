@@ -1338,9 +1338,10 @@ a {
 .SiteHeader .SiteHeader-nav a {
   color: #FFFFFF;
   margin-right: 50px;
+  transition: color .5s ease-in-out;
 }
 
-/* line 31, src/sass/views/SiteHeader.scss */
+/* line 32, src/sass/views/SiteHeader.scss */
 .SiteHeader .SiteHeader-nav a:last-child {
   margin-right: 0;
 }
@@ -1350,6 +1351,11 @@ a {
   .SiteHeader .SiteHeader-nav a {
     margin-right: 20px;
   }
+}
+
+/* line 45, src/sass/views/SiteHeader.scss */
+.SiteHeader--dark .SiteHeader-nav a {
+  color: #000000;
 }
 
 /* line 3, src/sass/views/Footer.scss */
@@ -1364,9 +1370,10 @@ a {
   height: 370px;
   margin-top: -185px;
   font-size: 12px;
+  transition: color .5s ease-in-out;
 }
 
-/* line 15, src/sass/views/Footer.scss */
+/* line 16, src/sass/views/Footer.scss */
 .Footer .Footer-text {
   display: block;
   transform: rotate(90deg);
@@ -1376,10 +1383,35 @@ a {
   right: -140px;
 }
 
-/* line 24, src/sass/views/Footer.scss */
+/* line 25, src/sass/views/Footer.scss */
 .Footer .Footer-link {
   position: absolute;
   bottom: 0;
+}
+
+/* line 32, src/sass/views/Footer.scss */
+.Footer svg path {
+  transition: fill .5s ease-in-out;
+}
+
+/* line 36, src/sass/views/Footer.scss */
+.Footer svg circle {
+  transition: stroke .5s ease-in-out;
+}
+
+/* line 41, src/sass/views/Footer.scss */
+.Footer--dark {
+  color: #000000;
+}
+
+/* line 46, src/sass/views/Footer.scss */
+.Footer--dark svg path {
+  fill: #000000;
+}
+
+/* line 50, src/sass/views/Footer.scss */
+.Footer--dark svg circle {
+  stroke: #000000;
 }
 
 /* line 3, src/sass/views/Home.scss */
@@ -1438,9 +1470,10 @@ a {
   width: 35vw;
   background: url("../assets/home-bg-1.jpg");
   background-position-x: right;
+  background-repeat: no-repeat;
 }
 
-/* line 51, src/sass/views/Home.scss */
+/* line 52, src/sass/views/Home.scss */
 .Home .Home-backgroundRight {
   position: absolute;
   top: 0;
@@ -1449,6 +1482,7 @@ a {
   width: 65vw;
   background: url("../assets/home-bg-2.jpg");
   background-position-x: center;
+  background-repeat: no-repeat;
 }
 
 /* line 1, src/sass/views/About.scss */

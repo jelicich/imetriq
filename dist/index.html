@@ -8,18 +8,18 @@
 </head>
 <body>
     
-    <header class="SiteHeader row">
+    <header class="SiteHeader row" id="site-header">
     <h1>
-        <a href="#home">
+        <a href="#home" class="scroll-to">
             <img src="assets/logo.svg" alt="imetriq" class="SiteHeader-logo">
         </a>
     </h1>
 
     <nav class="SiteHeader-nav">
-        <a href="#about">About imetriq</a>
-        <a href="#solutions">Solutions</a>
-        <a href="#how-it-works">How it works</a>
-        <a href="#contact">Contact us</a>
+        <a href="#about" class="scroll-to">About imetriq</a>
+        <a href="#solutions" class="scroll-to">Solutions</a>
+        <a href="#how-it-works" class="scroll-to">How it works</a>
+        <a href="#contact" class="scroll-to">Contact us</a>
     </nav>
 </header>
 
@@ -35,7 +35,7 @@
                 INFORMACIÓN SIN DATOS”</span>
             </h2>
 
-            <a href="#about" class="Home-viewMore">
+            <a href="#about" class="Home-viewMore scroll-to">
                 <img src="assets/circle-arrow-down.svg" alt="Ver más">
             </a>
         </div>
@@ -234,15 +234,20 @@
     </div>
 </section>
 
-    <footer class="Footer">
+    <footer class="Footer" id="footer">
     <span class="Footer-text">
         All rights reserved © 2020 - imetriq
     </span>
     <a href="" target="_blank" class="Footer-link">
-        <img src="assets/linkedin.svg" class="Footer-image" alt="LinkedIn">
+        <!-- <object data="assets/linkedin.svg" type="image/svg+xml" id="linkedin-icon">
+        </object> -->
+        <img src="assets/linkedin.svg" class="Footer-image" alt="LinkedIn" onload="SVGInject(this)">
     </a>
 </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js" integrity="sha512-nTHzMQK7lwWt8nL4KF6DhwLHluv6dVq/hNnj2PBN0xMl2KaMm1PM02csx57mmToPAodHmPsipoERRNn4pG7f+Q==" crossorigin="anonymous"></script>
+    <script src="js/libs.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>

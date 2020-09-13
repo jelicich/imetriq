@@ -11,6 +11,7 @@ $footerWidth: 68px;
     height: 370px;
     margin-top: -185px;
     font-size: 12px;
+    transition: color .5s ease-in-out;
 
     .Footer-text {
         display: block;
@@ -24,5 +25,31 @@ $footerWidth: 68px;
     .Footer-link {
         position: absolute;
         bottom: 0;
+    }
+
+    svg {
+        
+        path {
+            transition: fill .5s ease-in-out;
+        }
+
+        circle {
+            transition: stroke .5s ease-in-out;
+        }
+    }
+
+    &--dark {
+        color: $black; 
+
+        svg {
+
+            path{
+                fill: $black;
+            }
+
+            circle {
+                stroke: $black;
+            }
+        }
     }
 }
