@@ -17,6 +17,7 @@
 
         init: function () {
             console.log('init!')
+            window.scrollTo(0,0);
             try {
                 this.initComponents()
             } catch (e) {

@@ -16,13 +16,17 @@
         maxScroll: null,
 
         init: function () {
+            this.setLimits();
+
+            imetriq.utils.toggleClassOnScrollRange(this.element, FOOTER_DARK_CLASS, [this.minScroll, this.maxScroll]);
+            this.setScrollBehaviour();
+        },
+
+        setLimits: function() {
             const startWhite = document.querySelector(WHITE_SECTION_START_SELECTOR).getBoundingClientRect().top;
             const endWhite = document.querySelector(WHITE_SECTION_START_SELECTOR).getBoundingClientRect().bottom;
             this.minScroll = startWhite - this.element.getBoundingClientRect().bottom + (this.element.offsetHeight / 2);
-            this.maxScroll = endWhite + this.element.getBoundingClientRect().top + (this.element.offsetHeight / 2);;
-            
-            imetriq.utils.toggleClassOnScrollRange(this.element, FOOTER_DARK_CLASS, [this.minScroll, this.maxScroll]);
-            this.setScrollBehaviour();
+            this.maxScroll = endWhite + this.element.getBoundingClientRect().top + (this.element.offsetHeight / 2);
         },
         
         setScrollBehaviour: function() {
