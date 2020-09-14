@@ -13,6 +13,10 @@ $footerWidth: 68px;
     font-size: 12px;
     transition: color .5s ease-in-out;
 
+    @include sm-down {
+        display: none;
+    }
+
     .Footer-text {
         display: block;
         transform: rotate(90deg);

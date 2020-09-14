@@ -12,6 +12,11 @@
         font-size: 3.4rem;
         color: $white;
         font-weight: normal;
+
+        @include sm-down {
+            margin-top: 20px;
+            font-size: 1.8rem;
+        }
     }
 
     .Home-mainText {
@@ -19,8 +24,16 @@
         color: $white;
         margin-top: calc(#{-$headerHeight} - 42px); /*title height*/
 
-        @include lg-down{
+        @include lg-down {
             font-size: 9rem;
+        }
+
+        @include sm-down {
+            font-size: 5rem;
+
+            br {
+                display: none;
+            }
         }
     }
 
@@ -36,6 +49,10 @@
         width: 10vw;
         position: absolute;
         bottom: $fullWidthPaddingH-lg;
+
+        @include sm-down {
+            width: 25vw;
+        }
     }
 
     .Home-backgroundLeft {
@@ -47,6 +64,11 @@
         background: url('../assets/home-bg-1.jpg');
         background-position-x: right;
         background-repeat: no-repeat;
+
+        @include sm-down {
+            height: 60vh;
+            width: 50vw;
+        }
     }
 
     .Home-backgroundRight {
@@ -58,5 +80,10 @@
         background: url('../assets/home-bg-2.jpg');
         background-position-x: center;
         background-repeat: no-repeat;
+
+        @include sm-down {
+            height: 90vh;
+            width: 50vw;
+        }
     }
 }

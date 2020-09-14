@@ -1,6 +1,12 @@
 .HowItWorks {
     background: $white;
 
+    @include sm-down {
+        &.Section {
+            height: auto;
+        }
+    }
+
     .HowItWorks-innerWrapper {
         height: 100%;
         margin-top: -$headerHeight;
@@ -11,22 +17,43 @@
         @include lg-down {
             margin-top: auto;
         }
+
+        @include md {
+            margin-top: -$headerHeight-md
+        }
+
+        @include sm-down {
+            margin-top: 0;
+        }
     }
 
-    h1 {
-        font-size: 4rem;
-        width: 50%;
-        margin-left: 50%;
-        margin-bottom: 100px;
+    .HowItWorks-headingContainer {
+        
+        h1 {
+            font-size: 4rem;
+            width: 50%;
+            margin-left: 50%;
+            margin-bottom: 100px;
+    
+            @include lg-down {
+                font-size: 2.7rem;
+                margin-bottom: 20px;
+            }
 
-        @include lg-down {
-            font-size: 2.7rem;
-            margin-bottom: 20px;
+            @include sm-down {
+                width: 100%;
+                margin: 20px 0;
+            }
         }
     }
 
     .HowItWorks-contentContainer {
         display: flex;
+
+        @include sm-down {
+            flex-direction: column;
+            padding-bottom: 40px;
+        }
 
         h2 {
             font-family: $fontBody;
@@ -37,6 +64,18 @@
             @include lg-down {
                 font-size: 1.8rem;
             }
+
+            @include sm-down {
+                transform: rotate(-90deg);
+                position: absolute;
+                left: -35px;
+                padding: 0;
+                top: calc(50% - 15px);
+                text-align: center;
+                width: 110px;
+                height: 30px;
+                font-size: 1.6rem;
+            }
         }
 
         p {
@@ -45,6 +84,10 @@
 
             @include lg-down {
                 font-size: 1.4rem;
+            }
+
+            @include sm-down {
+                padding: 0 0 0 15px;
             }
         }
     }
@@ -55,13 +98,32 @@
         width: 50%;
         border-left: 1px solid $black;
 
+        @include sm-down {
+            width: 100%;
+            position: relative;
+
+            border-left: none;
+            border-top: 1px solid $black;
+        }
+
         .HowItWorks-stepWrapperInner {
             display: flex;
+
+            @include sm-down {
+                flex-direction: column;
+            }
         }
     }
 
     .HowItWorks-step {
         flex: 1;
+
+        @include sm-down {
+            display: flex;
+            position: relative;
+            padding-left: 30px;
+            align-items: center;
+        }
     }
 
     .HowItWorks-chip {
@@ -73,14 +135,35 @@
             font-size: 2.5rem;
         }
 
+        @include sm-down {
+            min-width: 70px;
+            max-width: 70px;
+            position: relative;
+            height: 270px;
+        }
+
         h3 {
             color: $white;
+
+            @include sm-down {
+                transform: rotate(-90deg);
+                position: absolute;
+                font-size: 2.4rem;
+                width: 240px;
+                left: -78px;
+                top: calc(50% - 15px);
+                height: 30px;
+            }
         }
     }
 
     .HowItWorks-chip.nth1 {
         background: $black;
         border-radius: 60px 0 0 60px;
+
+        @include sm-down {
+            border-radius: 60px 60px 0 0;
+        }
     }
 
     .HowItWorks-chip.nth2 {
@@ -98,6 +181,10 @@
     .HowItWorks-chip.nth4 {
         background: $primary;
         border-radius: 0 60px 60px 0;
+        
+        @include sm-down {
+            border-radius: 0 0 60px 60px;
+        }
         
         h3 {
             color: $black;

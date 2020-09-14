@@ -8,6 +8,24 @@
         display: flex;
         margin-top: -$headerHeight;
         align-items: center;
+
+        @include md {
+            margin-top: -$headerHeight-md;
+        }
+
+        @include sm-down {
+            margin-top: 0;
+        }
+    }
+
+    .About-title {
+        display: none;
+        color: $primary;
+    
+        @include sm-down {
+            display: block;
+            margin-bottom: 20px;
+        }
     }
 
     .About-text {
@@ -21,6 +39,12 @@
         @include lg-down{
             font-size: 2rem;
         }
+
+        @include sm-down {
+            margin-left: 0;
+            width: auto;
+            font-size: 1.6rem;
+        }
     }
 
     .About-circle {  
@@ -28,5 +52,9 @@
         height: 60px;
         border-radius: 50%;
         background-color: $primary;
+
+        @include sm-down {
+            display: none;
+        }
     }
 }

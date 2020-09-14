@@ -8,21 +8,36 @@
     @include lg-down {
         background-size: 49vw;
         background-position: 0 bottom;
-
-        
     }
+
     @include sq-res {
         background-position: 0;
+    }
+
+    @include sm-down {
+        background-image: none;
+        
+        &.Section {
+            height: auto;
+        }
     }
 
     .Solutions-innerWrapper {
         position: relative;
         display: flex;
         height: 100%;
+
+        @include sm-down {
+            flex-direction: column;
+        }
     }
 
     .Solutions-column {
         width: 50%;
+
+        @include sm-down {
+            width: 100%;
+        }
     }
 
     .Solutions-title {
@@ -30,6 +45,14 @@
 
         @include lg-down {
             font-size: 2.7rem;
+        }
+
+        @include sm-down {
+            margin: 20px 0;
+            
+            br {
+                display: none;
+            }
         }
     }
 
@@ -58,12 +81,20 @@
         display: flex;
         flex-flow: row wrap;
         align-content: center;
+
+        @include sm-down {
+            flex-direction: column;
+        }
     }
 
     .Solutions-contentBlock {
         width: 50%;
         padding: 0 20px;
         margin-bottom: 50px;
+
+        @include sm-down {
+            width: 100%;
+        }
 
         .Solutions-iconContainer {
             display: flex;
@@ -121,6 +152,10 @@
 
             @include lg-down {
                 font-size: 1.4rem;
+            }
+
+            @include sm-down {
+                font-size: 1.6rem;
             }
         }
     }

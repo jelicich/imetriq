@@ -1297,6 +1297,12 @@ a {
   }
 }
 
+/* line 1, src/sass/views/Index.scss */
+html.isBlocked,
+body.isBlocked {
+  overflow: hidden;
+}
+
 /* line 1, src/sass/views/SiteHeader.scss */
 .SiteHeader {
   display: flex;
@@ -1307,19 +1313,33 @@ a {
   height: 90px;
 }
 
-@media screen and (min-width: 960px) and (max-width: 1263px) {
+@media only screen and (max-width: 1263px) {
   /* line 1, src/sass/views/SiteHeader.scss */
   .SiteHeader {
-    padding: 30px 20px;
+    height: 70px;
+    padding: 20px 20px;
   }
 }
 
-/* line 13, src/sass/views/SiteHeader.scss */
+@media only screen and (max-width: 959px) {
+  /* line 1, src/sass/views/SiteHeader.scss */
+  .SiteHeader {
+    height: 60px;
+    align-items: flex-start;
+  }
+}
+
+/* line 19, src/sass/views/SiteHeader.scss */
+.SiteHeader .SiteHeader-logoContainer {
+  z-index: 1;
+}
+
+/* line 23, src/sass/views/SiteHeader.scss */
 .SiteHeader .SiteHeader-logo {
   width: 98px;
 }
 
-/* line 17, src/sass/views/SiteHeader.scss */
+/* line 27, src/sass/views/SiteHeader.scss */
 .SiteHeader .SiteHeader-nav {
   font-family: DecimaMonoPro, monospace;
   font-weight: bold;
@@ -1328,34 +1348,238 @@ a {
 }
 
 @media only screen and (max-width: 959px) {
-  /* line 17, src/sass/views/SiteHeader.scss */
+  /* line 27, src/sass/views/SiteHeader.scss */
   .SiteHeader .SiteHeader-nav {
     display: none;
   }
 }
 
-/* line 27, src/sass/views/SiteHeader.scss */
+/* line 37, src/sass/views/SiteHeader.scss */
 .SiteHeader .SiteHeader-nav a {
   color: #FFFFFF;
   margin-right: 50px;
   transition: color .5s ease-in-out;
 }
 
-/* line 32, src/sass/views/SiteHeader.scss */
-.SiteHeader .SiteHeader-nav a:last-child {
-  margin-right: 0;
-}
-
 @media screen and (min-width: 960px) and (max-width: 1263px) {
-  /* line 27, src/sass/views/SiteHeader.scss */
+  /* line 37, src/sass/views/SiteHeader.scss */
   .SiteHeader .SiteHeader-nav a {
     margin-right: 20px;
   }
 }
 
-/* line 45, src/sass/views/SiteHeader.scss */
+/* line 46, src/sass/views/SiteHeader.scss */
+.SiteHeader .SiteHeader-nav a:last-child {
+  margin-right: 0;
+}
+
+/* line 50, src/sass/views/SiteHeader.scss */
+.SiteHeader .SiteHeader-nav a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background: #23cf70;
+  transition: all 0.5s ease-in-out;
+}
+
+/* line 58, src/sass/views/SiteHeader.scss */
+.SiteHeader .SiteHeader-nav a.isActive {
+  color: #23CF70;
+  position: relative;
+  display: inline-block;
+}
+
+/* line 63, src/sass/views/SiteHeader.scss */
+.SiteHeader .SiteHeader-nav a.isActive::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: #23cf70;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 50%;
+}
+
+/* line 78, src/sass/views/SiteHeader.scss */
+.SiteHeader .SiteHeader-hamburger {
+  display: none;
+  cursor: pointer;
+  margin-right: 10px;
+  z-index: 1;
+}
+
+@media only screen and (max-width: 959px) {
+  /* line 78, src/sass/views/SiteHeader.scss */
+  .SiteHeader .SiteHeader-hamburger {
+    display: block;
+  }
+}
+
+/* line 88, src/sass/views/SiteHeader.scss */
+.SiteHeader .SiteHeader-hamburger span {
+  transition: all 0.4s cubic-bezier(0.5, 5, 0.6, 0.1);
+  display: block;
+  cursor: pointer;
+  background: #FFFFFF;
+  width: 30px;
+  height: 3px;
+  margin-top: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  border-radius: 1px;
+}
+
+/* line 106, src/sass/views/SiteHeader.scss */
+.SiteHeader .SiteHeader-hamburger.isActive span {
+  background: #fff;
+  width: 30px;
+  height: 3px;
+  margin-top: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  display: block;
+  border-radius: 1px;
+}
+
+/* line 119, src/sass/views/SiteHeader.scss */
+.SiteHeader .SiteHeader-hamburger.isActive span:nth-of-type(1) {
+  transform: rotate(45deg);
+}
+
+/* line 124, src/sass/views/SiteHeader.scss */
+.SiteHeader .SiteHeader-hamburger.isActive span:nth-of-type(2) {
+  transform: rotate(-45deg);
+  margin-top: -3px;
+}
+
+/* line 132, src/sass/views/SiteHeader.scss */
+.SiteHeader .SiteHeader-mobileMenu {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(6, 15, 27, 0.95);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+}
+
+@media only screen and (max-width: 959px) {
+  /* line 132, src/sass/views/SiteHeader.scss */
+  .SiteHeader .SiteHeader-mobileMenu {
+    display: block;
+  }
+}
+
+/* line 148, src/sass/views/SiteHeader.scss */
+.SiteHeader .SiteHeader-mobileMenu.isActive {
+  max-height: 100vh;
+}
+
+/* line 152, src/sass/views/SiteHeader.scss */
+.SiteHeader .SiteHeader-mobileMenu .Section {
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 156, src/sass/views/SiteHeader.scss */
+.SiteHeader .SiteHeader-mobileMenu .Section > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  gap: 20px;
+}
+
+/* line 165, src/sass/views/SiteHeader.scss */
+.SiteHeader .SiteHeader-mobileMenu p {
+  font-size: 1.4rem;
+  color: #FFFFFF;
+  font-family: DecimaMonoPro, monospace;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* line 173, src/sass/views/SiteHeader.scss */
+.SiteHeader .SiteHeader-mobileMenu img {
+  width: 50px;
+}
+
+/* line 178, src/sass/views/SiteHeader.scss */
+.SiteHeader .SiteHeader-mobileNav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+  padding-top: 20px;
+}
+
+/* line 186, src/sass/views/SiteHeader.scss */
+.SiteHeader .SiteHeader-mobileNav a {
+  font-family: DecimaMonoPro, monospace;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  transition: color .5s ease-in-out;
+  font-size: 3rem;
+  padding: 5px;
+}
+
+/* line 194, src/sass/views/SiteHeader.scss */
+.SiteHeader .SiteHeader-mobileNav a:last-child {
+  margin-right: 0;
+}
+
+@media screen and (min-width: 960px) and (max-width: 1263px) {
+  /* line 186, src/sass/views/SiteHeader.scss */
+  .SiteHeader .SiteHeader-mobileNav a {
+    margin-right: 20px;
+  }
+}
+
+/* line 202, src/sass/views/SiteHeader.scss */
+.SiteHeader .SiteHeader-mobileNav a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background: #23cf70;
+  transition: all 0.5s ease-in-out;
+}
+
+/* line 210, src/sass/views/SiteHeader.scss */
+.SiteHeader .SiteHeader-mobileNav a.isActive {
+  color: #23CF70;
+  position: relative;
+  display: inline-block;
+}
+
+/* line 215, src/sass/views/SiteHeader.scss */
+.SiteHeader .SiteHeader-mobileNav a.isActive::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: #23cf70;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 50%;
+}
+
+/* line 231, src/sass/views/SiteHeader.scss */
 .SiteHeader--dark .SiteHeader-nav a {
   color: #000000;
+}
+
+/* line 237, src/sass/views/SiteHeader.scss */
+.SiteHeader--dark .SiteHeader-hamburger span {
+  background: #000000;
 }
 
 /* line 3, src/sass/views/Footer.scss */
@@ -1373,7 +1597,14 @@ a {
   transition: color .5s ease-in-out;
 }
 
-/* line 16, src/sass/views/Footer.scss */
+@media only screen and (max-width: 959px) {
+  /* line 3, src/sass/views/Footer.scss */
+  .Footer {
+    display: none;
+  }
+}
+
+/* line 20, src/sass/views/Footer.scss */
 .Footer .Footer-text {
   display: block;
   transform: rotate(90deg);
@@ -1383,33 +1614,33 @@ a {
   right: -140px;
 }
 
-/* line 25, src/sass/views/Footer.scss */
+/* line 29, src/sass/views/Footer.scss */
 .Footer .Footer-link {
   position: absolute;
   bottom: 0;
 }
 
-/* line 32, src/sass/views/Footer.scss */
+/* line 36, src/sass/views/Footer.scss */
 .Footer svg path {
   transition: fill .5s ease-in-out;
 }
 
-/* line 36, src/sass/views/Footer.scss */
+/* line 40, src/sass/views/Footer.scss */
 .Footer svg circle {
   transition: stroke .5s ease-in-out;
 }
 
-/* line 41, src/sass/views/Footer.scss */
+/* line 45, src/sass/views/Footer.scss */
 .Footer--dark {
   color: #000000;
 }
 
-/* line 46, src/sass/views/Footer.scss */
+/* line 50, src/sass/views/Footer.scss */
 .Footer--dark svg path {
   fill: #000000;
 }
 
-/* line 50, src/sass/views/Footer.scss */
+/* line 54, src/sass/views/Footer.scss */
 .Footer--dark svg circle {
   stroke: #000000;
 }
@@ -1430,7 +1661,15 @@ a {
   font-weight: normal;
 }
 
-/* line 17, src/sass/views/Home.scss */
+@media only screen and (max-width: 959px) {
+  /* line 10, src/sass/views/Home.scss */
+  .Home .Home-title {
+    margin-top: 20px;
+    font-size: 1.8rem;
+  }
+}
+
+/* line 22, src/sass/views/Home.scss */
 .Home .Home-mainText {
   font-size: 13rem;
   color: #FFFFFF;
@@ -1439,13 +1678,24 @@ a {
 }
 
 @media only screen and (max-width: 1903px) {
-  /* line 17, src/sass/views/Home.scss */
+  /* line 22, src/sass/views/Home.scss */
   .Home .Home-mainText {
     font-size: 9rem;
   }
 }
 
-/* line 27, src/sass/views/Home.scss */
+@media only screen and (max-width: 959px) {
+  /* line 22, src/sass/views/Home.scss */
+  .Home .Home-mainText {
+    font-size: 5rem;
+  }
+  /* line 34, src/sass/views/Home.scss */
+  .Home .Home-mainText br {
+    display: none;
+  }
+}
+
+/* line 40, src/sass/views/Home.scss */
 .Home .Home-container {
   flex: 1;
   display: flex;
@@ -1454,14 +1704,21 @@ a {
   justify-content: center;
 }
 
-/* line 35, src/sass/views/Home.scss */
+/* line 48, src/sass/views/Home.scss */
 .Home .Home-viewMore {
   width: 10vw;
   position: absolute;
   bottom: 50px;
 }
 
-/* line 41, src/sass/views/Home.scss */
+@media only screen and (max-width: 959px) {
+  /* line 48, src/sass/views/Home.scss */
+  .Home .Home-viewMore {
+    width: 25vw;
+  }
+}
+
+/* line 58, src/sass/views/Home.scss */
 .Home .Home-backgroundLeft {
   position: absolute;
   top: 0;
@@ -1473,7 +1730,15 @@ a {
   background-repeat: no-repeat;
 }
 
-/* line 52, src/sass/views/Home.scss */
+@media only screen and (max-width: 959px) {
+  /* line 58, src/sass/views/Home.scss */
+  .Home .Home-backgroundLeft {
+    height: 60vh;
+    width: 50vw;
+  }
+}
+
+/* line 74, src/sass/views/Home.scss */
 .Home .Home-backgroundRight {
   position: absolute;
   top: 0;
@@ -1483,6 +1748,14 @@ a {
   background: url("../assets/home-bg-2.jpg");
   background-position-x: center;
   background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 959px) {
+  /* line 74, src/sass/views/Home.scss */
+  .Home .Home-backgroundRight {
+    height: 90vh;
+    width: 50vw;
+  }
 }
 
 /* line 1, src/sass/views/About.scss */
@@ -1500,7 +1773,35 @@ a {
   align-items: center;
 }
 
-/* line 13, src/sass/views/About.scss */
+@media screen and (min-width: 960px) and (max-width: 1263px) {
+  /* line 6, src/sass/views/About.scss */
+  .About .About-innerWrapper {
+    margin-top: -70px;
+  }
+}
+
+@media only screen and (max-width: 959px) {
+  /* line 6, src/sass/views/About.scss */
+  .About .About-innerWrapper {
+    margin-top: 0;
+  }
+}
+
+/* line 21, src/sass/views/About.scss */
+.About .About-title {
+  display: none;
+  color: #23CF70;
+}
+
+@media only screen and (max-width: 959px) {
+  /* line 21, src/sass/views/About.scss */
+  .About .About-title {
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* line 31, src/sass/views/About.scss */
 .About .About-text {
   color: #FFFFFF;
   font-family: DecimaMonoPro, monospace;
@@ -1511,18 +1812,34 @@ a {
 }
 
 @media only screen and (max-width: 1903px) {
-  /* line 13, src/sass/views/About.scss */
+  /* line 31, src/sass/views/About.scss */
   .About .About-text {
     font-size: 2rem;
   }
 }
 
-/* line 26, src/sass/views/About.scss */
+@media only screen and (max-width: 959px) {
+  /* line 31, src/sass/views/About.scss */
+  .About .About-text {
+    margin-left: 0;
+    width: auto;
+    font-size: 1.6rem;
+  }
+}
+
+/* line 50, src/sass/views/About.scss */
 .About .About-circle {
   width: 60px;
   height: 60px;
   border-radius: 50%;
   background-color: #23CF70;
+}
+
+@media only screen and (max-width: 959px) {
+  /* line 50, src/sass/views/About.scss */
+  .About .About-circle {
+    display: none;
+  }
 }
 
 /* line 1, src/sass/views/Solutions.scss */
@@ -1549,31 +1866,67 @@ a {
   }
 }
 
-/* line 18, src/sass/views/Solutions.scss */
+@media only screen and (max-width: 959px) {
+  /* line 1, src/sass/views/Solutions.scss */
+  .Solutions {
+    background-image: none;
+  }
+  /* line 20, src/sass/views/Solutions.scss */
+  .Solutions.Section {
+    height: auto;
+  }
+}
+
+/* line 25, src/sass/views/Solutions.scss */
 .Solutions .Solutions-innerWrapper {
   position: relative;
   display: flex;
   height: 100%;
 }
 
-/* line 24, src/sass/views/Solutions.scss */
+@media only screen and (max-width: 959px) {
+  /* line 25, src/sass/views/Solutions.scss */
+  .Solutions .Solutions-innerWrapper {
+    flex-direction: column;
+  }
+}
+
+/* line 35, src/sass/views/Solutions.scss */
 .Solutions .Solutions-column {
   width: 50%;
 }
 
-/* line 28, src/sass/views/Solutions.scss */
+@media only screen and (max-width: 959px) {
+  /* line 35, src/sass/views/Solutions.scss */
+  .Solutions .Solutions-column {
+    width: 100%;
+  }
+}
+
+/* line 43, src/sass/views/Solutions.scss */
 .Solutions .Solutions-title {
   font-size: 4rem;
 }
 
 @media only screen and (max-width: 1903px) {
-  /* line 28, src/sass/views/Solutions.scss */
+  /* line 43, src/sass/views/Solutions.scss */
   .Solutions .Solutions-title {
     font-size: 2.7rem;
   }
 }
 
-/* line 36, src/sass/views/Solutions.scss */
+@media only screen and (max-width: 959px) {
+  /* line 43, src/sass/views/Solutions.scss */
+  .Solutions .Solutions-title {
+    margin: 20px 0;
+  }
+  /* line 53, src/sass/views/Solutions.scss */
+  .Solutions .Solutions-title br {
+    display: none;
+  }
+}
+
+/* line 59, src/sass/views/Solutions.scss */
 .Solutions .Solutions-titleHighlight {
   color: #23CF70;
   font-size: 9.5rem;
@@ -1582,41 +1935,55 @@ a {
 }
 
 @media only screen and (max-width: 1903px) {
-  /* line 36, src/sass/views/Solutions.scss */
+  /* line 59, src/sass/views/Solutions.scss */
   .Solutions .Solutions-titleHighlight {
     font-size: 5rem;
     margin-top: 1rem;
   }
 }
 
-/* line 48, src/sass/views/Solutions.scss */
+/* line 71, src/sass/views/Solutions.scss */
 .Solutions .Solutions-titleIcon {
   display: inline-block;
   width: 100px;
 }
 
 @media only screen and (max-width: 1903px) {
-  /* line 48, src/sass/views/Solutions.scss */
+  /* line 71, src/sass/views/Solutions.scss */
   .Solutions .Solutions-titleIcon {
     width: 50px;
   }
 }
 
-/* line 57, src/sass/views/Solutions.scss */
+/* line 80, src/sass/views/Solutions.scss */
 .Solutions .Solutions-contentContainer {
   display: flex;
   flex-flow: row wrap;
   align-content: center;
 }
 
-/* line 63, src/sass/views/Solutions.scss */
+@media only screen and (max-width: 959px) {
+  /* line 80, src/sass/views/Solutions.scss */
+  .Solutions .Solutions-contentContainer {
+    flex-direction: column;
+  }
+}
+
+/* line 90, src/sass/views/Solutions.scss */
 .Solutions .Solutions-contentBlock {
   width: 50%;
   padding: 0 20px;
   margin-bottom: 50px;
 }
 
-/* line 68, src/sass/views/Solutions.scss */
+@media only screen and (max-width: 959px) {
+  /* line 90, src/sass/views/Solutions.scss */
+  .Solutions .Solutions-contentBlock {
+    width: 100%;
+  }
+}
+
+/* line 99, src/sass/views/Solutions.scss */
 .Solutions .Solutions-contentBlock .Solutions-iconContainer {
   display: flex;
   height: 120px;
@@ -1624,82 +1991,89 @@ a {
 }
 
 @media only screen and (max-width: 1903px) {
-  /* line 68, src/sass/views/Solutions.scss */
+  /* line 99, src/sass/views/Solutions.scss */
   .Solutions .Solutions-contentBlock .Solutions-iconContainer {
     height: 50px;
   }
 }
 
-/* line 78, src/sass/views/Solutions.scss */
+/* line 109, src/sass/views/Solutions.scss */
 .Solutions .Solutions-contentBlock:nth-child(1) .Solutions-iconContainer {
   width: 140px;
 }
 
 @media only screen and (max-width: 1903px) {
-  /* line 78, src/sass/views/Solutions.scss */
+  /* line 109, src/sass/views/Solutions.scss */
   .Solutions .Solutions-contentBlock:nth-child(1) .Solutions-iconContainer {
     width: 90px;
   }
 }
 
-/* line 86, src/sass/views/Solutions.scss */
+/* line 117, src/sass/views/Solutions.scss */
 .Solutions .Solutions-contentBlock:nth-child(2) .Solutions-iconContainer {
   width: 120px;
 }
 
 @media only screen and (max-width: 1903px) {
-  /* line 86, src/sass/views/Solutions.scss */
+  /* line 117, src/sass/views/Solutions.scss */
   .Solutions .Solutions-contentBlock:nth-child(2) .Solutions-iconContainer {
     width: 80px;
   }
 }
 
-/* line 94, src/sass/views/Solutions.scss */
+/* line 125, src/sass/views/Solutions.scss */
 .Solutions .Solutions-contentBlock:nth-child(3) .Solutions-iconContainer {
   width: 110px;
 }
 
 @media only screen and (max-width: 1903px) {
-  /* line 94, src/sass/views/Solutions.scss */
+  /* line 125, src/sass/views/Solutions.scss */
   .Solutions .Solutions-contentBlock:nth-child(3) .Solutions-iconContainer {
     width: 70px;
   }
 }
 
-/* line 102, src/sass/views/Solutions.scss */
+/* line 133, src/sass/views/Solutions.scss */
 .Solutions .Solutions-contentBlock:nth-child(4) .Solutions-iconContainer {
   width: 80px;
 }
 
 @media only screen and (max-width: 1903px) {
-  /* line 102, src/sass/views/Solutions.scss */
+  /* line 133, src/sass/views/Solutions.scss */
   .Solutions .Solutions-contentBlock:nth-child(4) .Solutions-iconContainer {
     width: 60px;
   }
 }
 
-/* line 110, src/sass/views/Solutions.scss */
+/* line 141, src/sass/views/Solutions.scss */
 .Solutions .Solutions-contentBlock h2 {
   font-size: 3rem;
   margin: 20px 0;
 }
 
 @media only screen and (max-width: 1903px) {
-  /* line 110, src/sass/views/Solutions.scss */
+  /* line 141, src/sass/views/Solutions.scss */
   .Solutions .Solutions-contentBlock h2 {
     font-size: 2rem;
   }
 }
 
-/* line 119, src/sass/views/Solutions.scss */
+/* line 150, src/sass/views/Solutions.scss */
 .Solutions .Solutions-contentBlock p {
   font-size: 2rem;
 }
 
 @media only screen and (max-width: 1903px) {
-  /* line 119, src/sass/views/Solutions.scss */
+  /* line 150, src/sass/views/Solutions.scss */
   .Solutions .Solutions-contentBlock p {
     font-size: 1.4rem;
+  }
+}
+
+@media only screen and (max-width: 959px) {
+  /* line 150, src/sass/views/Solutions.scss */
+  .Solutions .Solutions-contentBlock p {
+    font-size: 1.6rem;
   }
 }
 
@@ -1708,7 +2082,14 @@ a {
   background: #FFFFFF;
 }
 
-/* line 4, src/sass/views/HowItWorks.scss */
+@media only screen and (max-width: 959px) {
+  /* line 5, src/sass/views/HowItWorks.scss */
+  .HowItWorks.Section {
+    height: auto;
+  }
+}
+
+/* line 10, src/sass/views/HowItWorks.scss */
 .HowItWorks .HowItWorks-innerWrapper {
   height: 100%;
   margin-top: -90px;
@@ -1718,14 +2099,28 @@ a {
 }
 
 @media only screen and (max-width: 1903px) {
-  /* line 4, src/sass/views/HowItWorks.scss */
+  /* line 10, src/sass/views/HowItWorks.scss */
   .HowItWorks .HowItWorks-innerWrapper {
     margin-top: auto;
   }
 }
 
-/* line 16, src/sass/views/HowItWorks.scss */
-.HowItWorks h1 {
+@media screen and (min-width: 960px) and (max-width: 1263px) {
+  /* line 10, src/sass/views/HowItWorks.scss */
+  .HowItWorks .HowItWorks-innerWrapper {
+    margin-top: -70px;
+  }
+}
+
+@media only screen and (max-width: 959px) {
+  /* line 10, src/sass/views/HowItWorks.scss */
+  .HowItWorks .HowItWorks-innerWrapper {
+    margin-top: 0;
+  }
+}
+
+/* line 32, src/sass/views/HowItWorks.scss */
+.HowItWorks .HowItWorks-headingContainer h1 {
   font-size: 4rem;
   width: 50%;
   margin-left: 50%;
@@ -1733,19 +2128,35 @@ a {
 }
 
 @media only screen and (max-width: 1903px) {
-  /* line 16, src/sass/views/HowItWorks.scss */
-  .HowItWorks h1 {
+  /* line 32, src/sass/views/HowItWorks.scss */
+  .HowItWorks .HowItWorks-headingContainer h1 {
     font-size: 2.7rem;
     margin-bottom: 20px;
   }
 }
 
-/* line 28, src/sass/views/HowItWorks.scss */
+@media only screen and (max-width: 959px) {
+  /* line 32, src/sass/views/HowItWorks.scss */
+  .HowItWorks .HowItWorks-headingContainer h1 {
+    width: 100%;
+    margin: 20px 0;
+  }
+}
+
+/* line 50, src/sass/views/HowItWorks.scss */
 .HowItWorks .HowItWorks-contentContainer {
   display: flex;
 }
 
-/* line 31, src/sass/views/HowItWorks.scss */
+@media only screen and (max-width: 959px) {
+  /* line 50, src/sass/views/HowItWorks.scss */
+  .HowItWorks .HowItWorks-contentContainer {
+    flex-direction: column;
+    padding-bottom: 40px;
+  }
+}
+
+/* line 58, src/sass/views/HowItWorks.scss */
 .HowItWorks .HowItWorks-contentContainer h2 {
   font-family: HelveticaNeue, sans-serif;
   font-size: 2rem;
@@ -1754,26 +2165,48 @@ a {
 }
 
 @media only screen and (max-width: 1903px) {
-  /* line 31, src/sass/views/HowItWorks.scss */
+  /* line 58, src/sass/views/HowItWorks.scss */
   .HowItWorks .HowItWorks-contentContainer h2 {
     font-size: 1.8rem;
   }
 }
 
-/* line 42, src/sass/views/HowItWorks.scss */
+@media only screen and (max-width: 959px) {
+  /* line 58, src/sass/views/HowItWorks.scss */
+  .HowItWorks .HowItWorks-contentContainer h2 {
+    transform: rotate(-90deg);
+    position: absolute;
+    left: -35px;
+    padding: 0;
+    top: calc(50% - 15px);
+    text-align: center;
+    width: 110px;
+    height: 30px;
+    font-size: 1.6rem;
+  }
+}
+
+/* line 81, src/sass/views/HowItWorks.scss */
 .HowItWorks .HowItWorks-contentContainer p {
   font-size: 2rem;
   padding: 40px;
 }
 
 @media only screen and (max-width: 1903px) {
-  /* line 42, src/sass/views/HowItWorks.scss */
+  /* line 81, src/sass/views/HowItWorks.scss */
   .HowItWorks .HowItWorks-contentContainer p {
     font-size: 1.4rem;
   }
 }
 
-/* line 52, src/sass/views/HowItWorks.scss */
+@media only screen and (max-width: 959px) {
+  /* line 81, src/sass/views/HowItWorks.scss */
+  .HowItWorks .HowItWorks-contentContainer p {
+    padding: 0 0 0 15px;
+  }
+}
+
+/* line 95, src/sass/views/HowItWorks.scss */
 .HowItWorks .HowItWorks-stepWrapper {
   display: flex;
   flex-direction: column;
@@ -1781,17 +2214,44 @@ a {
   border-left: 1px solid #000000;
 }
 
-/* line 58, src/sass/views/HowItWorks.scss */
+@media only screen and (max-width: 959px) {
+  /* line 95, src/sass/views/HowItWorks.scss */
+  .HowItWorks .HowItWorks-stepWrapper {
+    width: 100%;
+    position: relative;
+    border-left: none;
+    border-top: 1px solid #000000;
+  }
+}
+
+/* line 109, src/sass/views/HowItWorks.scss */
 .HowItWorks .HowItWorks-stepWrapper .HowItWorks-stepWrapperInner {
   display: flex;
 }
 
-/* line 63, src/sass/views/HowItWorks.scss */
+@media only screen and (max-width: 959px) {
+  /* line 109, src/sass/views/HowItWorks.scss */
+  .HowItWorks .HowItWorks-stepWrapper .HowItWorks-stepWrapperInner {
+    flex-direction: column;
+  }
+}
+
+/* line 118, src/sass/views/HowItWorks.scss */
 .HowItWorks .HowItWorks-step {
   flex: 1;
 }
 
-/* line 67, src/sass/views/HowItWorks.scss */
+@media only screen and (max-width: 959px) {
+  /* line 118, src/sass/views/HowItWorks.scss */
+  .HowItWorks .HowItWorks-step {
+    display: flex;
+    position: relative;
+    padding-left: 30px;
+    align-items: center;
+  }
+}
+
+/* line 129, src/sass/views/HowItWorks.scss */
 .HowItWorks .HowItWorks-chip {
   padding: 30px 0;
   text-align: center;
@@ -1799,45 +2259,82 @@ a {
 }
 
 @media only screen and (max-width: 1903px) {
-  /* line 67, src/sass/views/HowItWorks.scss */
+  /* line 129, src/sass/views/HowItWorks.scss */
   .HowItWorks .HowItWorks-chip {
     font-size: 2.5rem;
   }
 }
 
-/* line 76, src/sass/views/HowItWorks.scss */
+@media only screen and (max-width: 959px) {
+  /* line 129, src/sass/views/HowItWorks.scss */
+  .HowItWorks .HowItWorks-chip {
+    min-width: 70px;
+    max-width: 70px;
+    position: relative;
+    height: 270px;
+  }
+}
+
+/* line 145, src/sass/views/HowItWorks.scss */
 .HowItWorks .HowItWorks-chip h3 {
   color: #FFFFFF;
 }
 
-/* line 81, src/sass/views/HowItWorks.scss */
+@media only screen and (max-width: 959px) {
+  /* line 145, src/sass/views/HowItWorks.scss */
+  .HowItWorks .HowItWorks-chip h3 {
+    transform: rotate(-90deg);
+    position: absolute;
+    font-size: 2.4rem;
+    width: 240px;
+    left: -78px;
+    top: calc(50% - 15px);
+    height: 30px;
+  }
+}
+
+/* line 160, src/sass/views/HowItWorks.scss */
 .HowItWorks .HowItWorks-chip.nth1 {
   background: #000000;
   border-radius: 60px 0 0 60px;
 }
 
-/* line 86, src/sass/views/HowItWorks.scss */
+@media only screen and (max-width: 959px) {
+  /* line 160, src/sass/views/HowItWorks.scss */
+  .HowItWorks .HowItWorks-chip.nth1 {
+    border-radius: 60px 60px 0 0;
+  }
+}
+
+/* line 169, src/sass/views/HowItWorks.scss */
 .HowItWorks .HowItWorks-chip.nth2 {
   background: #3B3B47;
 }
 
-/* line 90, src/sass/views/HowItWorks.scss */
+/* line 173, src/sass/views/HowItWorks.scss */
 .HowItWorks .HowItWorks-chip.nth3 {
   background: #77F971;
 }
 
-/* line 93, src/sass/views/HowItWorks.scss */
+/* line 176, src/sass/views/HowItWorks.scss */
 .HowItWorks .HowItWorks-chip.nth3 h3 {
   color: #000000;
 }
 
-/* line 98, src/sass/views/HowItWorks.scss */
+/* line 181, src/sass/views/HowItWorks.scss */
 .HowItWorks .HowItWorks-chip.nth4 {
   background: #23CF70;
   border-radius: 0 60px 60px 0;
 }
 
-/* line 102, src/sass/views/HowItWorks.scss */
+@media only screen and (max-width: 959px) {
+  /* line 181, src/sass/views/HowItWorks.scss */
+  .HowItWorks .HowItWorks-chip.nth4 {
+    border-radius: 0 0 60px 60px;
+  }
+}
+
+/* line 189, src/sass/views/HowItWorks.scss */
 .HowItWorks .HowItWorks-chip.nth4 h3 {
   color: #000000;
 }
@@ -1852,7 +2349,14 @@ a {
   display: flex;
 }
 
-/* line 9, src/sass/views/Contact.scss */
+@media only screen and (max-width: 959px) {
+  /* line 1, src/sass/views/Contact.scss */
+  .Contact {
+    background-image: none;
+  }
+}
+
+/* line 13, src/sass/views/Contact.scss */
 .Contact .Contact-innerWrapper {
   flex: 1;
   display: flex;
@@ -1862,38 +2366,56 @@ a {
   justify-content: center;
 }
 
-/* line 17, src/sass/views/Contact.scss */
+/* line 21, src/sass/views/Contact.scss */
 .Contact .Contact-innerWrapper h1 {
   font-size: 10rem;
   color: #23CF70;
 }
 
 @media only screen and (max-width: 1903px) {
-  /* line 17, src/sass/views/Contact.scss */
+  /* line 21, src/sass/views/Contact.scss */
   .Contact .Contact-innerWrapper h1 {
     font-size: 6rem;
   }
 }
 
-/* line 26, src/sass/views/Contact.scss */
+@media only screen and (max-width: 959px) {
+  /* line 21, src/sass/views/Contact.scss */
+  .Contact .Contact-innerWrapper h1 {
+    font-size: 5rem;
+  }
+  /* line 32, src/sass/views/Contact.scss */
+  .Contact .Contact-innerWrapper h1 br {
+    display: none;
+  }
+}
+
+/* line 38, src/sass/views/Contact.scss */
 .Contact .Contact-innerWrapper h2 {
   font-size: 4rem;
   color: #82878D;
 }
 
 @media only screen and (max-width: 1903px) {
-  /* line 26, src/sass/views/Contact.scss */
+  /* line 38, src/sass/views/Contact.scss */
   .Contact .Contact-innerWrapper h2 {
     font-size: 2.5rem;
   }
 }
 
-/* line 35, src/sass/views/Contact.scss */
+/* line 47, src/sass/views/Contact.scss */
 .Contact .Contact-innerWrapper .Contact-inputContainer {
   display: flex;
 }
 
-/* line 39, src/sass/views/Contact.scss */
+@media only screen and (max-width: 959px) {
+  /* line 47, src/sass/views/Contact.scss */
+  .Contact .Contact-innerWrapper .Contact-inputContainer {
+    flex-direction: column;
+  }
+}
+
+/* line 55, src/sass/views/Contact.scss */
 .Contact .Contact-innerWrapper input {
   font-size: 4rem;
   padding: 25px 50px 15px;
@@ -1906,39 +2428,63 @@ a {
 }
 
 @media only screen and (max-width: 1903px) {
-  /* line 39, src/sass/views/Contact.scss */
+  /* line 55, src/sass/views/Contact.scss */
   .Contact .Contact-innerWrapper input {
     font-size: 2.5rem;
     height: 66px;
   }
 }
 
-/* line 54, src/sass/views/Contact.scss */
+@media only screen and (max-width: 959px) {
+  /* line 55, src/sass/views/Contact.scss */
+  .Contact .Contact-innerWrapper input {
+    width: 100%;
+    height: 66px;
+    padding: 20px 25px 10px;
+  }
+}
+
+/* line 76, src/sass/views/Contact.scss */
 .Contact .Contact-innerWrapper input:first-child {
   border-radius: 44px 0 0 44px;
   border-right: 1px solid #000000;
 }
 
 @media only screen and (max-width: 1903px) {
-  /* line 54, src/sass/views/Contact.scss */
+  /* line 76, src/sass/views/Contact.scss */
   .Contact .Contact-innerWrapper input:first-child {
     border-radius: 33px 0 0 33px;
   }
 }
 
-/* line 63, src/sass/views/Contact.scss */
+@media only screen and (max-width: 959px) {
+  /* line 76, src/sass/views/Contact.scss */
+  .Contact .Contact-innerWrapper input:first-child {
+    border-radius: 33px;
+    margin-bottom: 20px;
+  }
+}
+
+/* line 90, src/sass/views/Contact.scss */
 .Contact .Contact-innerWrapper input:last-child {
   border-radius: 0 44px 44px 0;
 }
 
 @media only screen and (max-width: 1903px) {
-  /* line 63, src/sass/views/Contact.scss */
+  /* line 90, src/sass/views/Contact.scss */
   .Contact .Contact-innerWrapper input:last-child {
     border-radius: 0 33px 33px 0;
   }
 }
 
-/* line 72, src/sass/views/Contact.scss */
+@media only screen and (max-width: 959px) {
+  /* line 90, src/sass/views/Contact.scss */
+  .Contact .Contact-innerWrapper input:last-child {
+    border-radius: 33px;
+  }
+}
+
+/* line 103, src/sass/views/Contact.scss */
 .Contact .Contact-innerWrapper button {
   background: #23CF70;
   font-size: 4rem;
@@ -1954,7 +2500,7 @@ a {
 }
 
 @media only screen and (max-width: 1903px) {
-  /* line 72, src/sass/views/Contact.scss */
+  /* line 103, src/sass/views/Contact.scss */
   .Contact .Contact-innerWrapper button {
     height: 66px;
     font-size: 2.5rem;
@@ -1963,7 +2509,14 @@ a {
   }
 }
 
-/* line 92, src/sass/views/Contact.scss */
+@media only screen and (max-width: 959px) {
+  /* line 103, src/sass/views/Contact.scss */
+  .Contact .Contact-innerWrapper button {
+    padding: 20px 25px 10px;
+  }
+}
+
+/* line 127, src/sass/views/Contact.scss */
 .Contact .Contact-innerWrapper button img {
   transform: rotate(180deg);
   display: inline-block;
@@ -1972,14 +2525,14 @@ a {
 }
 
 @media only screen and (max-width: 1903px) {
-  /* line 92, src/sass/views/Contact.scss */
+  /* line 127, src/sass/views/Contact.scss */
   .Contact .Contact-innerWrapper button img {
     width: 40px;
     margin-left: 40px;
   }
 }
 
-/* line 105, src/sass/views/Contact.scss */
+/* line 140, src/sass/views/Contact.scss */
 .Contact .Contact-innerWrapper .Contact-linksContainer {
   position: absolute;
   bottom: 0;
@@ -1990,12 +2543,24 @@ a {
   height: 50px;
 }
 
-/* line 114, src/sass/views/Contact.scss */
+/* line 149, src/sass/views/Contact.scss */
 .Contact .Contact-innerWrapper .Contact-linksContainer a {
   text-transform: uppercase;
   font-family: DecimaMonoPro, monospace;
   color: #82878D;
   font-size: 2rem;
+}
+
+@media only screen and (max-width: 959px) {
+  /* line 140, src/sass/views/Contact.scss */
+  .Contact .Contact-innerWrapper .Contact-linksContainer {
+    width: 100%;
+    align-items: center;
+  }
+  /* line 159, src/sass/views/Contact.scss */
+  .Contact .Contact-innerWrapper .Contact-linksContainer a {
+    font-size: 1.6rem;
+  }
 }
 
 /* line 1, src/sass/components/Section.scss */
@@ -2006,10 +2571,17 @@ a {
   padding: 90px 50px 0;
 }
 
-@media screen and (min-width: 960px) and (max-width: 1263px) {
+@media only screen and (max-width: 1263px) {
   /* line 1, src/sass/components/Section.scss */
   .Section {
     padding: 90px 20px 0;
+  }
+}
+
+@media only screen and (max-width: 959px) {
+  /* line 1, src/sass/components/Section.scss */
+  .Section {
+    padding-top: 60px;
   }
 }
 

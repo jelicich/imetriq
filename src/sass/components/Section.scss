@@ -4,7 +4,11 @@
     overflow: hidden;
     padding: $headerHeight $fullWidthPaddingH-lg 0;
 
-    @include md {
+    @include md-down {
         padding: $headerHeight $fullWidthPaddingH-md 0;
+    }
+
+    @include sm-down {
+        padding-top: $headerHeight-sm;
     }
 }
