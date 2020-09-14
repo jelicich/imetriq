@@ -61,16 +61,16 @@
             const links = this.element.querySelectorAll(MOBILE_LINKS_SELECTOR);
             links.forEach( (link) => {
                 link.addEventListener('click', () => {
-                    this.toggleMobileMenuClasses();
+                    this.toggleMobileMenuClasses(false);
                 })
             });
         },
 
-        toggleMobileMenuClasses: function() {
-            this.element.querySelector(HAMBURGUER_SELECTOR).classList.toggle('isActive');
-            this.element.querySelector(MOBILE_MENU_SELECTOR).classList.toggle('isActive');
-            document.body.classList.toggle('isBlocked');
-            document.documentElement.classList.toggle('isBlocked');
+        toggleMobileMenuClasses: function(force) {
+            this.element.querySelector(HAMBURGUER_SELECTOR).classList.toggle('isActive', force);
+            this.element.querySelector(MOBILE_MENU_SELECTOR).classList.toggle('isActive', force);
+            document.body.classList.toggle('isBlocked', force);
+            document.documentElement.classList.toggle('isBlocked', force);
         },
 
         startIntersectionObserver: function () {

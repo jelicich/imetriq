@@ -12,8 +12,8 @@ require_once('libs/PHPMailer/Exception.php');
 require_once('libs/PHPMailer/SMTP.php');
 
 // TODO: add actual address
-$EMAIL_ADDRESS_SENDER = 'sender@mail.com';
-$EMAIL_ADDRESS_RECEIVER = 'email@mail.com';
+$EMAIL_ADDRESS_SENDER = 'info@imetriq.com';
+$EMAIL_ADDRESS_RECEIVER = 'info@imetriq.com';
 
 
 $err = false;
