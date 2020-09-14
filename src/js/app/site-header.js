@@ -81,14 +81,6 @@
                         const target = '#' + entries[0].target.getAttribute('id');
                         imetriq.header.setActiveLink(target);
                     }
-                    
-                    for (const entry of entries) {
-                        console.log(
-                            // entry.target,
-                            entry.isIntersecting,
-                            entry.intersectionRatio
-                        );
-                    }
                 }
                 const myIntersectionObserver = new IntersectionObserver(callback, {
                     root: document.querySelector('main'),

@@ -12,7 +12,8 @@
 
         components: [
             'header',
-            'footer'
+            'footer',
+            'contact'
         ],
 
         init: function () {
