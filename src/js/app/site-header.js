@@ -26,9 +26,14 @@
             
             imetriq.utils.toggleClassOnScrollRange(this.element, HEADER_DARK_CLASS, [this.minScroll, this.maxScroll]);
             this.setScrollBehaviour();
-            this.setHamburgerButton();
-            this.setMobileLinks();
-            this.startIntersectionObserver();
+            
+            if(imetriq.utils.isMobile()) {
+                this.setHamburgerButton();
+                this.setMobileLinks();
+                this.startSectionMobileListener();
+            } else {
+                this.startIntersectionObserver();
+            }
         },
 
         setScrollBehaviour: function() {
@@ -90,6 +95,22 @@
                     threshold: 0.65
                 });
                 myIntersectionObserver.observe(document.querySelector(link.getAttribute('href')));
+            })
+        },
+
+        startSectionMobileListener: function() {
+            
+            window.addEventListener('scroll', () => {
+                const links = this.element.querySelectorAll(LINKS_SELECTOR);
+                links.forEach((link) => {
+                    const offsetTop = window.innerHeight * 0.25;
+                    const href = link.getAttribute('href');
+                    const section = document.querySelector(href);
+                    const distanceToTop = section.getBoundingClientRect().top;
+                    if(distanceToTop < offsetTop) {
+                        imetriq.header.setActiveLink(href)
+                    }
+                });
             })
         },
 
