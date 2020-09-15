@@ -1,0 +1,13 @@
+@keyframes floating {
+    from { transform: translate(0,  0px); }
+    65%  { transform: translate(0, 10px); }
+    to   { transform: translate(0, -0px); }    
+}    
+
+@keyframes bounceAbove {
+    from { transform: scale(1); }
+    35%  { transform: scale(0.9); }
+    65%  { transform: scale(1.05); }
+    to   { transform: scale(1); }    
+}    
+  

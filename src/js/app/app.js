@@ -13,7 +13,8 @@
         components: [
             'header',
             'footer',
-            'contact'
+            'contact',
+            'home'
         ],
 
         init: function () {

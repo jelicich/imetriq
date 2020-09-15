@@ -56,5 +56,12 @@
         @include sm-down {
             display: none;
         }
+
+        &:hover {
+            animation-name: bounceAbove;
+            animation-duration: 1s;
+            animation-iteration-count: 1;
+            animation-timing-function: ease-in-out;
+        }
     }
 }
