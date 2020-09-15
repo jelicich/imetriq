@@ -4,8 +4,7 @@
 Run `npm install`
 
 ## Build
-Run `gulp` 
-Run `gulp --prod` to include minified files in the html
+Run `gulp` or `gulp --prod` to include minified files in the html
 
 ## Watch
 Run `gulp watch`
