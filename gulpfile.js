@@ -74,7 +74,11 @@ var flatmap = require('gulp-flatmap');
 var lazypipe = require('lazypipe');
 var rename = require('gulp-rename');
 var header = require('gulp-header');
+var replace = require('gulp-replace');
+var htmlmin = require('gulp-htmlmin');
+var gulpIf = require('gulp-if');
 var package = require('./package.json');
+var argv = require('yargs').argv;
 
 // Scripts
 var jshint = require('gulp-jshint');
@@ -103,6 +107,35 @@ var nunjucksRender = require('gulp-nunjucks-render');
 var browserSync = require('browser-sync');
 
 
+var isProduction = (argv.prod === undefined) ? false : true;
+
+var random = Math.floor((Math.random() * 10000) + 1);
+var version = package.version.replace(/\./gi, '_');
+
+var fileSuffixMin = '.{version}.{random}.min.{ext}'
+	.replace('{version}', version)
+	.replace('{random}', random.toString());
+
+var fileSuffix = '.{version}.{random}.{ext}'
+	.replace('{version}', version)
+	.replace('{random}', random.toString());
+
+// var appFileMin = 'app.{version}.{random}.min.{ext}'
+// 	.replace('{version}', version)
+// 	.replace('{random}', random.toString());
+
+// var libsFileMin = 'libs.{version}.{random}.min.{ext}'
+//     .replace('{version}', version)
+// 	.replace('{random}', random.toString());
+
+// var appFile = 'app.{version}.{random}.{ext}'
+// 	.replace('{version}', version)
+// 	.replace('{random}', random.toString());
+
+// var libsFile = 'libs.{version}.{random}.{ext}'
+//     .replace('{version}', version)
+// 	.replace('{random}', random.toString());
+
 /**
  * Gulp Tasks
  */
@@ -126,6 +159,7 @@ var cleanDist = function (done) {
 // Repeated JavaScript tasks
 var jsTasks = lazypipe()
 	.pipe(header, banner.main, {package: package})
+	.pipe(rename, {suffix: `.${version}.${random}`})
 	.pipe(optimizejs)
 	.pipe(dest, paths.scripts.output)
 	.pipe(rename, {suffix: '.min'})
@@ -212,6 +246,7 @@ var buildStyles = function (done) {
 			})
 		]))
 		.pipe(header(banner.main, {package: package}))
+		.pipe(rename({suffix: `.${version}.${random}`}))
 		.pipe(dest(paths.styles.output))
 		.pipe(rename({suffix: '.min'}))
 		.pipe(postcss([
@@ -263,12 +298,25 @@ var copyFiles = function (done) {
 
 // HTML and Nunjucks
 var buildHtml = function() {
+	var suffix = isProduction ? fileSuffixMin : fileSuffix;
+
+	var fileNames = {
+        'css': 'styles' + suffix.replace('{ext}', 'css'),
+		'js': 'app' + suffix.replace('{ext}', 'js'),
+		'libs': 'libs' + suffix.replace('{ext}', 'js'),
+	};
+	
     // Gets .html and .nunjucks files in pages
     return src(paths.input + 'index.html')
         // Renders template with nunjucks
         .pipe(nunjucksRender({
             path: ['src/templates']
-        }))
+		}))
+		// Replaces placeholders for file names
+		.pipe(replace(/{styles.css}/g, fileNames.css))
+		.pipe(replace(/{app.js}/g, fileNames.js))
+		.pipe(replace(/{libs.js}/g, fileNames.libs))
+		.pipe(gulpIf(isProduction, htmlmin({removeComments: true, collapseWhitespace: true})))
         // output files in app folder
         .pipe(dest(paths.output))
 }

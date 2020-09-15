@@ -33,18 +33,22 @@
         "gulp-concat": "2.6.1",
         "gulp-flatmap": "1.0.2",
         "gulp-header": "2.0.5",
+        "gulp-htmlmin": "^5.0.1",
+        "gulp-if": "^3.0.0",
         "gulp-imagemin": "^7.1.0",
         "gulp-jshint": "2.1.0",
         "gulp-nunjucks-render": "^2.2.3",
         "gulp-optimize-js": "1.1.0",
         "gulp-postcss": "8.0.0",
         "gulp-rename": "1.4.0",
+        "gulp-replace": "^1.0.0",
         "gulp-sass": "4.0.2",
         "gulp-svgmin": "2.1.0",
         "gulp-terser": "1.1.7",
         "jshint": "2.9.6",
         "jshint-stylish": "2.2.1",
         "lazypipe": "1.0.1",
-        "node-sass": "4.13.0"
+        "node-sass": "4.13.0",
+        "yargs": "^16.0.3"
     }
 }
