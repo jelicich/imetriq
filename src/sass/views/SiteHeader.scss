@@ -6,7 +6,8 @@
     z-index: 1000;
     height: $headerHeight;
     width: 100%;
-    
+    background-color: rgba(6, 15, 27, 0);
+
     @include md-down {
         height: $headerHeight-md;
         padding: 20px $fullWidthPaddingH-md;
@@ -15,6 +16,20 @@
     @include sm-down {
         height: $headerHeight-sm;
         align-items: flex-start;
+    }
+
+    &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: $darkBlue;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        z-index: -1;
+        transition: all .5s ease-in-out;
     }
 
     .SiteHeader-logoContainer {
@@ -228,6 +243,11 @@
     }  
     
     &--dark {
+
+        &::before {
+            background-color: $white;
+        }
+
         .SiteHeader-nav {
             a {
                 color: $black;
@@ -238,6 +258,12 @@
             span {
                 background: $black;
             }
+        }
+    }
+
+    &--opaque {
+        &::before {
+            opacity: .6;
         }
     }
 }

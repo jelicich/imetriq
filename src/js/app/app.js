@@ -17,6 +17,8 @@
             'home'
         ],
 
+        timeline: new TimelineLite(),
+
         init: function () {
             console.log('init!')
             window.scrollTo(0,0);
@@ -29,6 +31,8 @@
         },
 
         initComponents: function() {
+            gsap.registerPlugin(ScrollTrigger);
+
             this.components.map((component) => {
                 if(!this[component].init) {
                     throw 'Component must have init fn.'
@@ -50,9 +54,10 @@
                         scrollTo: scrollTo, 
                         ease: "power2.inOut"
                     }
-                    gsap.to(window, scrollOpts);
+                    imetriq.timeline.to(window, scrollOpts);
                 }
             });
+            imetriq.timeline.progress(1).progress(0);
         }   
     }
 

@@ -29,10 +29,13 @@
         }
 
         @include sm-down {
-            font-size: 5rem;
+            font-size: 4rem;
 
             br {
-                display: none;
+                content:' ';
+            }
+            br:after {
+                content:' ';
             }
         }
     }
@@ -80,15 +83,18 @@
         position: absolute;
         top: 0;
         right: 0;
-        height: 157vh;
+        height: 150vh;
         width: 65vw;
         background: url('../assets/home-bg-2.jpg');
-        background-position-x: center;
         background-repeat: no-repeat;
+        background-size: cover;
 
         @include sm-down {
-            height: 90vh;
+            height: 100vh;
             width: 50vw;
+            //background-size: cover;
+            background-position: bottom;
+            background-size: 200vh;
         }
     }
 }

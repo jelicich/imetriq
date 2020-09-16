@@ -1,20 +1,17 @@
 (function() {
     'use strict';
 
-    const imetriq = window.imetriq;
-
-    // const SOLUTIONS_ORDER = 2;
-    // const CONTACT_ORDER = 4;
-    // const MIN_SCROLL = window.innerHeight * SOLUTIONS_ORDER;
-    // const MAX_SCROLL = window.innerHeight * CONTACT_ORDER;
     const WHITE_SECTION_START_SELECTOR = '#solutions';
     const WHITE_SECTION_END_SELECTOR = '#how-it-works';
     const HEADER_DARK_CLASS = 'SiteHeader--dark';
+    const HEADER_OPAQUE_CLASS = 'SiteHeader--opaque';
     const ELEMENT_SELECTOR = '#site-header';
     const LINKS_SELECTOR = '.SiteHeader-nav a, .SiteHeader-logoContainer a';
     const HAMBURGUER_SELECTOR = '.SiteHeader-hamburger';
     const MOBILE_MENU_SELECTOR = '.SiteHeader-mobileMenu';
     const MOBILE_LINKS_SELECTOR = '.SiteHeader-mobileNav a, .SiteHeader-logoContainer a';
+
+    const imetriq = window.imetriq;
 
     imetriq.header = {
 
@@ -39,6 +36,7 @@
         setScrollBehaviour: function() {
             window.addEventListener('scroll', () => {
                 imetriq.utils.toggleClassOnScrollRange(this.element, HEADER_DARK_CLASS, [this.minScroll, this.maxScroll]);
+                this.element.classList.toggle(HEADER_OPAQUE_CLASS, window.scrollY > 50);
             });
         },
 

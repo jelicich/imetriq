@@ -16,6 +16,9 @@
         maxScroll: null,
 
         init: function () {
+            if(imetriq.utils.isMobile()) {
+                return;
+            }
             this.setLimits();
 
             imetriq.utils.toggleClassOnScrollRange(this.element, FOOTER_DARK_CLASS, [this.minScroll, this.maxScroll]);
