@@ -120,21 +120,6 @@ var fileSuffix = '.{version}.{random}.{ext}'
 	.replace('{version}', version)
 	.replace('{random}', random.toString());
 
-// var appFileMin = 'app.{version}.{random}.min.{ext}'
-// 	.replace('{version}', version)
-// 	.replace('{random}', random.toString());
-
-// var libsFileMin = 'libs.{version}.{random}.min.{ext}'
-//     .replace('{version}', version)
-// 	.replace('{random}', random.toString());
-
-// var appFile = 'app.{version}.{random}.{ext}'
-// 	.replace('{version}', version)
-// 	.replace('{random}', random.toString());
-
-// var libsFile = 'libs.{version}.{random}.{ext}'
-//     .replace('{version}', version)
-// 	.replace('{random}', random.toString());
 
 /**
  * Gulp Tasks
@@ -342,7 +327,10 @@ var startServer = function (done) {
 // Reload the browser when files change
 var reloadBrowser = function (done) {
 	if (!settings.reload) return done();
-	browserSync.reload();
+	// it sometimes loads before everything finishes
+	setTimeout(() => {
+		browserSync.reload();
+	},0)
 	done();
 };
 

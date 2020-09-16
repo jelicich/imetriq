@@ -14,16 +14,17 @@
             'header',
             'footer',
             'contact',
-            'home'
+            'home',
+            'about'
         ],
 
         timeline: new TimelineLite(),
 
         init: function () {
-            console.log('init!')
+            console.log('init!');
             window.scrollTo(0,0);
             try {
-                this.initComponents()
+                this.initComponents();
             } catch (e) {
                 console.error(e);
             }
@@ -35,10 +36,10 @@
 
             this.components.map((component) => {
                 if(!this[component].init) {
-                    throw 'Component must have init fn.'
+                    throw 'Component must have init fn.';
                 }
                 this[component].init();
-            })
+            });
         },
 
         setLinksAction: function() {
@@ -53,18 +54,18 @@
                         duration: 1, 
                         scrollTo: scrollTo, 
                         ease: "power2.inOut"
-                    }
+                    };
                     imetriq.timeline.to(window, scrollOpts);
-                }
+                };
             });
             imetriq.timeline.progress(1).progress(0);
         }   
-    }
+    };
 
 
     window.onload = function() {
         // change this to increase/decrease difficulty
         
         imetriq.init();
-    }
+    };
 })();
