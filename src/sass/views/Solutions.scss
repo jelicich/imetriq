@@ -11,7 +11,7 @@
     }
 
     @include sq-res {
-        background-position: 0;
+        background-position: 0 36vh;
     }
 
     @include sm-down {
@@ -54,6 +54,10 @@
             br {
                 display: none;
             }
+        }
+
+        @include sq-res {
+            margin-top: 100px;
         }
     }
 

@@ -10,7 +10,8 @@
     const SNACKBAR_SUCCESS_CLASS = 'Contact-snackBar--success';
     const SNACKBAR_ERROR_CLASS = 'Contact-snackBar--error';
     const URL_SERVICE = 'services/sendEmail.php';
-
+    const SUBMIT_IMAGE_SELECTOR = SUBMIT_SELECTOR + ' img';
+    
     const imetriq = window.imetriq;
 
     imetriq.contact = {
@@ -28,6 +29,10 @@
                 excludeMobile: false,
                 fn: 'animateTitle'
             },
+            {
+                excludeMobile: true,
+                fn: 'animateSubmit'
+            }
         ],
 
         init: function () {
@@ -119,6 +124,25 @@
                 y: '-25vw',
                 opacity: 0
             })
+        },
+
+        animateSubmit: function() {
+            const button = this.element.querySelector(SUBMIT_SELECTOR);
+            const image = this.element.querySelector(SUBMIT_IMAGE_SELECTOR);
+
+            button.addEventListener('mouseenter', () => {
+                gsap.to(image, {
+                    x: '15px',
+                    ease: 'power2.inOut'
+                })
+            }) 
+            
+            button.addEventListener('mouseleave', () => {
+                gsap.to(image, {
+                    x: '0px',
+                    ease: 'power2.inOut'
+                })
+            }) 
         }
     }
 })();
