@@ -109,6 +109,21 @@
                 const currentHref = link.getAttribute('href');
                 currentHref === targetActive ? link.classList.toggle('isActive', true) : link.classList.toggle('isActive', false);
             })
+        },
+
+        translate: function(lang, el) {
+            if(i18next.language === lang) {
+                return;
+            }
+            
+            i18next.changeLanguage(lang).then(() => {
+                imetriq.localize('body');
+            })
+
+            el.parentElement.querySelectorAll('button').forEach((el) => {
+                el.classList.toggle('isSelected', false);
+            })
+            el.classList.add('isSelected');
         }
     }
 })();

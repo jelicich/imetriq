@@ -53,7 +53,7 @@
         a {
             color: $white;
             margin-right: 50px;
-            transition: color .5s ease-in-out;
+            transition: color .5s ease-in-out, opacity .5s ease-in-out;
 
             @include md {
                 margin-right: 20px;
@@ -86,6 +86,22 @@
                     left: 0;
                     top: 50%;
                 }
+            }
+        }
+
+        button {
+            border: none;
+            background: none;
+            font-family: $fontMono;
+            color: $white;
+            cursor: pointer;
+
+            &:focus {
+                outline: none;
+            }
+
+            &.isSelected {
+                color: $primary;
             }
         }
         
@@ -238,6 +254,22 @@
                     left: 0;
                     top: 50%;
                 }
+            }
+        }
+
+        button {
+            border: none;
+            background: none;
+            font-family: $fontMono;
+            color: $white;
+            cursor: pointer;
+
+            &:focus {
+                outline: none;
+            }
+
+            &.isSelected {
+                color: $primary;
             }
         }
     }  

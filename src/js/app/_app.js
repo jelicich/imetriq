@@ -21,6 +21,7 @@
         ],
 
         timeline: new TimelineLite(),
+        localize: null,
 
         init: function () {
             window.scrollTo(0,0);
@@ -30,6 +31,7 @@
                 console.error(e);
             }
             this.setLinksAction();
+            this.startLocalization();
         },
 
         initComponents: function() {
@@ -60,7 +62,33 @@
                 };
             });
             imetriq.timeline.progress(1).progress(0);
-        }   
+        },
+        
+        startLocalization: function() {
+            i18next.use(i18nextHttpBackend)
+                .init({
+                    backend: {
+                        // for all available options read the backend's repository readme file
+                        loadPath: './locales/{{lng}}/{{ns}}.json',
+                    }
+                });
+            
+            i18next.init({
+                lng: 'es',
+                fallbackLng: ['en'],
+                selectorAttr: 'data-i18n', // selector for translating elements
+                useOptionsAttr: false,
+                parseDefaultValueFromContent: true
+                
+            }, function (err, t) {
+
+                imetriq.localize = locI18next.init(i18next);
+
+                imetriq.localize('body');
+
+                document.body.classList.add('loaded');
+            });   
+        }
     };
 
 

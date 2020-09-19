@@ -2,3 +2,12 @@ html.isBlocked,
 body.isBlocked {
     overflow: hidden;
 }
+
+body {
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+
+    &.loaded {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,67 @@
+{
+    "nav": {
+        "about": "About iMetriq",
+        "solutions": "Solutions",
+        "howItWorks": "How it works",
+        "contact": "Contact us"
+    },
+    
+    "home": {
+        "title": "Decisiones inteligentes",
+        "mainText1": "PUEDES TENER DATOS SIN<br>INFORMACIÓN, ",
+        "mainText2": "PERO NUNCA TENDRÁS<br>INFORMACIÓN SIN DATOS”",
+        "viewMore": "Ver más"
+    },
+
+    "about": {
+        "title": "Sobre iMetriq",
+        "text1": "EN IMETRIQ ACOMPAÑAMOS A LAS MARCAS EN SU PROCESO DE DIGITALIZACIÓN DE LA INFORMACIÓN DESDE EL MOMENTO CERO PARA ASEGURARNOS LA CORRECTA ESTRUCTURACIÓN Y ORDENAMIENTO DE SU INFORMACIÓN Y ASÍ LA MAXIMIZACIÓN DE SU USO APLICADA A “BUSINESS INTELLIGENCE”.",
+        "text2": "NUESTRA PLATAFORMA BUSCA ROMPER LOS PARADIGMAS ACTUALES DE LA INDUSTRIA PUBLICITARIA MEDIANTE LA SOFISTICACIÓN DE PROCESOS. UNIFICANDO Y CONECTANDO DATA PARA DESBLOQUEAR INSIGHTS ACCIONABLES QUE GUÍEN LA TOMA DE DESICIONES EJECUTIVAS."
+    },
+
+    "solutions": {
+        "title1": "Un producto orientado a la sofisticación<br>de procesos con foco en la<br>",
+        "title2": "maximización<br> del ROI",
+        "titleIcon": "Maximización del ROI",
+        "img1": "Conectar y unificar data",
+        "contentTitle1": "Conectar y<br>unificar data",
+        "contentDesc1": "Integración, estructuración y clasificación de la información mediante integraciones tecnológicas.",
+        "img2": "Reportes y data science",
+        "contentTitle2": "Reportes y<br>data science",
+        "contentDesc2": "Visualizaciones orientadas a UX UI enfocadas en el descubrimiento de insights.",
+        "img3": "Modelado de data",
+        "contentTitle3": "Modelado<br>de data",
+        "contentDesc3": "Aplicación de modelos predictivos y deductivos que anticipan tendencias futuras y permiten la adaptación temprana de estrategias de negocio.",
+        "img4": "Co-planificación y sistema de aprobaciones",
+        "contentTitle4": "Co-planificación y<br>sistema de aprobaciones",
+        "contentDesc4": "Centralización información en un sistema único con integraciones de alertas y documentación de aprobaciones."
+    },
+    
+    "howItWorks": {
+        "title": "Nuestro camino es simple",
+
+        "stepTitle1": "Auditar",
+        "stepTitle2": "Visualizar",
+        "stepTitle3": "Optimizar",
+
+        "chip1": "Data start",
+        "chip2": "Data visualize",
+        "chip3": "Data analyze",
+        "chip4": "Process automation",
+
+        "text1": "Desarrollo de arquitectura de datos y clarificación de próximos pasos para embarcarse en el “data journey”",
+        "text2": "Maximizar el poder de tu data mediante visualizaciones de dashboards y reportes",
+        "text3": "Mediante la aplicación y el modelado de la data podremos descubrir insights que no están accesibles a simple vista",
+        "text4": "Integración de procesos automáticos de control para la optimización de tiempos"
+    },
+
+    "contact": {
+        "title": "STAY IN THE<br>DATA KNOWLEDGE",
+        "subtitle": "Solicitar una demo",
+        "name": "Nombre completo",
+        "email": "email",
+        "submit": "Solicitar",
+        "terms": "Términos y condiciones",
+        "privacy": "Política de privacidad"
+    }
+}

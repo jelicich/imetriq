@@ -180,7 +180,7 @@
             position: absolute;
             bottom: 0;
             right: 0;
-            width: 40%;
+            width: 50%;
             display: flex;
             justify-content: space-around;
             height: 50px;
@@ -195,8 +195,12 @@
             @include sm-down {
                 width: 100%;
                 align-items: center;
+                display: flex;
+                flex-direction: column;
+                padding-bottom: 10px;
+
                 a {
-                    font-size: 1.6rem;
+                    font-size: 1.5rem;
                 }
             }
         }
