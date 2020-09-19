@@ -18,7 +18,6 @@
         element: document.querySelector(ELEMENT_SELECTOR),
 
         init: function () {
-            console.log('init header!')
             this.setLimits();
             
             imetriq.utils.toggleClassOnScrollRange(this.element, HEADER_DARK_CLASS, [this.minScroll, this.maxScroll]);

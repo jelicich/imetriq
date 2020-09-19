@@ -10,4 +10,13 @@
     65%  { transform: scale(1.05); }
     to   { transform: scale(1); }    
 }    
-  
+
+@keyframes loading {
+    0% {transform: rotate(0deg)}
+    50% {
+        transform: rotate(180deg);
+        opacity: .35
+    }
+    100% {transform: rotate(360deg)}
+}
+		

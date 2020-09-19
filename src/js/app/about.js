@@ -2,7 +2,7 @@
     'use strict';
 
     const ELEMENT_SELECTOR = '#about';
-    const TEXT_SELECTOR = '.About-text';
+    const TEXT_SELECTOR = '.About-title, .About-text';
 
     const imetriq = window.imetriq;
 
@@ -14,7 +14,7 @@
 
         animations: [
             {
-                excludeMobile: true,
+                excludeMobile: false,
                 fn: 'animateText'
             }
         ],
@@ -38,7 +38,7 @@
                     end: "bottom bottom",
                 },
                 opacity: 0,
-                x: '50vw'
+                x: imetriq.utils.isMobile() ? 0 : '50vw'
             });
 
             this.timeline.progress(1).progress(0);

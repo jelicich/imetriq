@@ -15,13 +15,14 @@
             'footer',
             'contact',
             'home',
-            'about'
+            'about',
+            'solutions',
+            'howItWorks'
         ],
 
         timeline: new TimelineLite(),
 
         init: function () {
-            console.log('init!');
             window.scrollTo(0,0);
             try {
                 this.initComponents();
@@ -64,8 +65,6 @@
 
 
     window.onload = function() {
-        // change this to increase/decrease difficulty
-        
         imetriq.init();
     };
 })();
