@@ -111,19 +111,23 @@
             })
         },
 
-        translate: function(lang, el) {
-            if(i18next.language === lang) {
-                return;
-            }
+        translate: function(el) {
+            const lang = el.dataset.translateTo;
             
             i18next.changeLanguage(lang).then(() => {
-                imetriq.localize('body');
+                imetriq.localize('body'); 
             })
 
-            el.parentElement.querySelectorAll('button').forEach((el) => {
-                el.classList.toggle('isSelected', false);
-            })
-            el.classList.add('isSelected');
+            el.dataset.translateTo = lang === 'en' ? 'es' : 'en';
+            const newText = lang === 'en' ? 'ESP' : 'ENG';
+
+            new TimelineLite().to(el.firstElementChild, 0.2, {
+                text: '',
+                ease: Linear.easeNone,
+            }).to(el.firstElementChild, 0.2, {
+                text: newText,
+                ease: Linear.easeNone,
+            });
         }
     }
 })();

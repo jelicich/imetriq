@@ -9,6 +9,8 @@ Run `gulp` or `gulp --prod` to include minified files in the html
 ## Watch
 Run `gulp watch`
 
+(Node version v13.7.0)
+
 ## Project conventions
 
 ### Styles

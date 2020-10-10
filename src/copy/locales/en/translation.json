@@ -7,61 +7,61 @@
     },
     
     "home": {
-        "title": "Decisiones inteligentes",
-        "mainText1": "PUEDES TENER DATOS SIN<br>INFORMACIÓN, ",
-        "mainText2": "PERO NUNCA TENDRÁS<br>INFORMACIÓN SIN DATOS”",
-        "viewMore": "Ver más"
+        "title": "SMART DECISIONS",
+        "mainText1": "YOU CAN HAVE DATA WITHOUT<br>INFORMATION, ",
+        "mainText2": "BUT YOU'LL NEVER HAVE<br>INFORMATION WITHOUT DATA”",
+        "viewMore": "View More"
     },
 
     "about": {
-        "title": "Sobre iMetriq",
-        "text1": "EN IMETRIQ ACOMPAÑAMOS A LAS MARCAS EN SU PROCESO DE DIGITALIZACIÓN DE LA INFORMACIÓN DESDE EL MOMENTO CERO PARA ASEGURARNOS LA CORRECTA ESTRUCTURACIÓN Y ORDENAMIENTO DE SU INFORMACIÓN Y ASÍ LA MAXIMIZACIÓN DE SU USO APLICADA A “BUSINESS INTELLIGENCE”.",
-        "text2": "NUESTRA PLATAFORMA BUSCA ROMPER LOS PARADIGMAS ACTUALES DE LA INDUSTRIA PUBLICITARIA MEDIANTE LA SOFISTICACIÓN DE PROCESOS. UNIFICANDO Y CONECTANDO DATA PARA DESBLOQUEAR INSIGHTS ACCIONABLES QUE GUÍEN LA TOMA DE DESICIONES EJECUTIVAS."
+        "title": "About iMetriq",
+        "text1": "AT IMETRIQ WE HELP BRANDS DRIVE THROUGH THEIR DIGITAL TRANSFORMATION DATA PROCESSES TO ENSURE A SOLID SET UP THAT WILL THEN MAXIMIZE ITS USE TOWARDS BI.",
+        "text2": "OUR PLATFORM SEEKS TO BREAK INDUSTRY PARADIGMS THROUGH PROCESS SOPHISTICATION. UNIFYING AND CONNECTING DATA TO UNLOCK ACTIONABLE INSIGHTS THAT GUIDE BUSINESSES IN THEIR DECISION MAKING PROCESS."
     },
 
     "solutions": {
-        "title1": "Un producto orientado a la sofisticación<br>de procesos con foco en la<br>",
-        "title2": "maximización<br> del ROI",
-        "titleIcon": "Maximización del ROI",
-        "img1": "Conectar y unificar data",
-        "contentTitle1": "Conectar y<br>unificar data",
-        "contentDesc1": "Integración, estructuración y clasificación de la información mediante integraciones tecnológicas.",
-        "img2": "Reportes y data science",
-        "contentTitle2": "Reportes y<br>data science",
-        "contentDesc2": "Visualizaciones orientadas a UX UI enfocadas en el descubrimiento de insights.",
-        "img3": "Modelado de data",
-        "contentTitle3": "Modelado<br>de data",
-        "contentDesc3": "Aplicación de modelos predictivos y deductivos que anticipan tendencias futuras y permiten la adaptación temprana de estrategias de negocio.",
-        "img4": "Co-planificación y sistema de aprobaciones",
-        "contentTitle4": "Co-planificación y<br>sistema de aprobaciones",
-        "contentDesc4": "Centralización información en un sistema único con integraciones de alertas y documentación de aprobaciones."
+        "title1": "MAKING IT RELEVANT<br>FOR YOUR COMPANY WHILE<br>",
+        "title2": "MAXIMIZING<br>ROI",
+        "titleIcon": "MAXIMIZING ROI",
+        "img1": "Connect & Unify Data",
+        "contentTitle1": "Connect<br>& Unify Data",
+        "contentDesc1": "Comprehensive data architecture developed within our data warehouse via API connections.",
+        "img2": "Data Science & Reporting",
+        "contentTitle2": "Data Science<br>& Reporting",
+        "contentDesc2": "UX UI visualizations focused on data accessibility making insights easily discoverable.",
+        "img3": "Data Modelling",
+        "contentTitle3": "Data<br>Modelling",
+        "contentDesc3": "Predictive and deductive modelling to anticipate future trends via and better optimize your business efforts.",
+        "img4": "Planning & Approval system",
+        "contentTitle4": "Planning<br>& Approval system",
+        "contentDesc4": "Centralized information within an integrated system where you will find from historic planning data to approval documentation."
     },
     
     "howItWorks": {
-        "title": "Nuestro camino es simple",
+        "title": "WE FOLLOW A SIMPLE PATH",
 
-        "stepTitle1": "Auditar",
-        "stepTitle2": "Visualizar",
-        "stepTitle3": "Optimizar",
+        "stepTitle1": "Audit",
+        "stepTitle2": "Visualize",
+        "stepTitle3": "Optimize",
 
         "chip1": "Data start",
         "chip2": "Data visualize",
         "chip3": "Data analyze",
         "chip4": "Process automation",
 
-        "text1": "Desarrollo de arquitectura de datos y clarificación de próximos pasos para embarcarse en el “data journey”",
-        "text2": "Maximizar el poder de tu data mediante visualizaciones de dashboards y reportes",
-        "text3": "Mediante la aplicación y el modelado de la data podremos descubrir insights que no están accesibles a simple vista",
-        "text4": "Integración de procesos automáticos de control para la optimización de tiempos"
+        "text1": "Architecture development and next steps towards your data journey including a comprehensive migration plan and strategy to bring your data into a warehouse.”",
+        "text2": "Unleash the power of data via dashboards, reports, and data storytelling.",
+        "text3": "Discover new relationships in your data, building new metrics, or incorporate new data sources from your internal organization, or third party vendors.",
+        "text4": "Automatic real time alerts that will allow to easily control and optimize your efforts."
     },
 
     "contact": {
         "title": "STAY IN THE<br>DATA KNOWLEDGE",
-        "subtitle": "Solicitar una demo",
-        "name": "Nombre completo",
+        "subtitle": "Request a demo",
+        "name": "Full Name",
         "email": "email",
-        "submit": "Solicitar",
-        "terms": "Términos y condiciones",
-        "privacy": "Política de privacidad"
+        "submit": "Request",
+        "terms": "Terms & Conditions",
+        "privacy": "Privacy Policy"
     }
 }

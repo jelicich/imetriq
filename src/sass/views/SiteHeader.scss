@@ -1,3 +1,5 @@
+$translateButtonSize: 50px;
+
 .SiteHeader {
     display: flex;
     justify-content: space-between;
@@ -45,6 +47,12 @@
         font-weight: bold;
         text-transform: uppercase;
         font-size: 2.5rem;
+        position: relative;
+        padding-right: $translateButtonSize;
+
+        @include lg-down {
+            font-size: 2rem;
+        }
 
         @include sm-down {
             display: none;       
@@ -88,23 +96,6 @@
                 }
             }
         }
-
-        button {
-            border: none;
-            background: none;
-            font-family: $fontMono;
-            color: $white;
-            cursor: pointer;
-
-            &:focus {
-                outline: none;
-            }
-
-            &.isSelected {
-                color: $primary;
-            }
-        }
-        
     }
 
     .SiteHeader-hamburger {
@@ -257,19 +248,65 @@
             }
         }
 
-        button {
-            border: none;
-            background: none;
-            font-family: $fontMono;
-            color: $white;
-            cursor: pointer;
+        .SiteHeader-translateButton {
+            position: relative;
+            margin-right: 0;
+            margin-top: 0;
+            top: auto;
+            right: auto;
+        }
+    }
 
-            &:focus {
-                outline: none;
-            }
+    .SiteHeader-translateButton {
+        font-size: 1.6rem;
+        font-family: $fontMono;
+        background: none;
+        border: 2px solid $primary;
+        width: $translateButtonSize;
+        height: $translateButtonSize;
+        text-align: center;
+        border-radius: 50%;
+        color: $primary;
+        font-weight: bold;
+        cursor: pointer;
+        overflow:hidden;
+        outline:none;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        margin-right: -$translateButtonSize / 2;
+        margin-top: -$translateButtonSize / 2;
 
-            &.isSelected {
-                color: $primary;
+        span {
+            position: relative;
+            z-index: 1;
+            display: inline-block;
+        }
+
+        &:before {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: $translateButtonSize;
+            height: $translateButtonSize;
+            margin-left: -$translateButtonSize / 2;
+            margin-top: -$translateButtonSize / 2;
+            content: '';
+            border-color: $primary;
+            border-style: solid;
+            border-width: 1px;
+            border-radius: $translateButtonSize / 2;
+            transform-origin: center center;
+            transition: all 200ms ease-in-out;
+            box-sizing: border-box;
+        }
+
+        &:hover {
+            color: $black;
+        
+            &:before {
+              border-width: 35px;
             }
         }
     }  

@@ -56,10 +56,12 @@
             let timeout;
 
             form.onsubmit = (e) => {
+                const currentLanguage = i18next.language;
                 e.preventDefault();
                 const data = {
                     name: fullName.value,
-                    email: email.value
+                    email: email.value,
+                    lang: currentLanguage
                 }
                 button.setAttribute('disabled', true);
                 button.classList.add('isLoading');
@@ -76,13 +78,18 @@
                             snackBar.classList.remove(SNACKBAR_ERROR_CLASS);
                             snackBar.classList.remove(SNACKBAR_SUCCESS_CLASS);
                             snackBar.innerHTML = '';
-                        },5000)
+                        }, 5000)
                     })
                     .then((result) => {
-                        fullName.value = '';
-                        email.value = '';
-                        snackBar.classList.add(SNACKBAR_SUCCESS_CLASS);
-                        snackBar.innerHTML = result;
+                        snackBar.innerHTML = result.message;
+                        if(result.error) {
+                            snackBar.classList.add(SNACKBAR_ERROR_CLASS);    
+                        } else {
+                            fullName.value = '';
+                            email.value = '';
+                            snackBar.classList.add(SNACKBAR_SUCCESS_CLASS);    
+                        }
+                        
                     }, (error) => {
                         snackBar.innerHTML = error;
                         snackBar.classList.add(SNACKBAR_ERROR_CLASS);

@@ -3,43 +3,54 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-// require 'libs/PHPMailer/Exception.php';
-// require 'libs/PHPMailer/PHPMailer.php';
-// require 'libs/PHPMailer/SMTP.php';
-
 require_once('libs/PHPMailer/PHPMailer.php'); 
 require_once('libs/PHPMailer/Exception.php');
 require_once('libs/PHPMailer/SMTP.php');
 
-// TODO: add actual address
+// Completar:
+// Dirección de e-mail que va a usar el script para loggearse en el servidor y enviar el mensaje
 $EMAIL_ADDRESS_SENDER = 'info@imetriq.com';
+// Contraseña de la cuenta para loggearse en el servidor
+$EMAIL_PASSWORD_SENDER = '1234'
+// Dirección de e-mail a la cual se va a enviar el mensaje
 $EMAIL_ADDRESS_RECEIVER = 'info@imetriq.com';
+// Dirección del servidor SMPT
+$HOST_ADDRESS = 'mail.imetriq.com.ar'
 
 
 $err = false;
 $msg = '';
 $email = '';
 
+if (!empty($_POST['lang'])) {
+    $lang = $_POST['lang'];
+} else {
+    $lang = 'en';
+}
+
 if (!empty($_POST['name'])) {
     $name = substr(strip_tags($_POST['name']), 0, 255);
 } else {
     $name = '';
-    $msg .= 'Ingrese nombre. \n';
+    $msg .= $lang == 'en' ? 'Name is mandatory. \n' : 'Ingrese nombre. \n';
     $err = true;
 }
 
 if (!empty($_POST['email']) && PHPMailer::validateAddress($_POST['email'])) {
     $email = $_POST['email'];
 } else {
-    $msg .= "Dirección de email invalida. \n";
+    $msg .= $lang == 'en' ? 'Invalid e-mail address. \n' : 'Dirección de email invalida. \n';
     $err = true;
 }
 
 if (!$err) {
     $mail = new PHPMailer;
     $mail->isSMTP();
-    $mail->Host = 'localhost';
+    $mail->Host = $HOST_ADDRESS;
     $mail->Port = 25;
+    $mail->SMTPAuth = true;
+    $mail->Username = $EMAIL_ADDRESS_SENDER;
+    $mail->Password = $EMAIL_PASSWORD_SENDER;
     $mail->CharSet = PHPMailer::CHARSET_UTF8;
     
     $mail->setFrom($EMAIL_ADDRESS_SENDER, (empty($name) ? 'Contact form' : $name));
@@ -52,7 +63,7 @@ if (!$err) {
         $err = true;
         $msg .= 'Mailer Error: '. $mail->ErrorInfo;
     } else {
-        $msg .= 'Mensaje enviado!';
+        $msg .= $lang == 'en' ? 'Request sent!' : '¡Solicitud enviada!';
     }
 }
 
