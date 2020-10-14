@@ -9,13 +9,13 @@ require_once('libs/PHPMailer/SMTP.php');
 
 // Completar:
 // Dirección de e-mail que va a usar el script para loggearse en el servidor y enviar el mensaje
-$EMAIL_ADDRESS_SENDER = 'info@imetriq.com';
+$EMAIL_ADDRESS_SENDER = '****';
 // Contraseña de la cuenta para loggearse en el servidor
-$EMAIL_PASSWORD_SENDER = '1234'
+$EMAIL_PASSWORD_SENDER = '****';
 // Dirección de e-mail a la cual se va a enviar el mensaje
-$EMAIL_ADDRESS_RECEIVER = 'info@imetriq.com';
-// Dirección del servidor SMPT
-$HOST_ADDRESS = 'mail.imetriq.com.ar'
+$EMAIL_ADDRESS_RECEIVER = '****';
+// Dirección del servidor SMTP
+$HOST_ADDRESS = '****';
 
 
 $err = false;
