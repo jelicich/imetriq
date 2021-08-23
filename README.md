@@ -1,4 +1,5 @@
 # imetriq
+View project running: https://jelicich.github.io/imetriq/ | http://www.imetriq.com/
 
 ## Install
 Run `npm install`
