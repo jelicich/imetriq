@@ -1,0 +1,67 @@
+{
+    "nav": {
+        "about": "About iMetriq",
+        "solutions": "Solutions",
+        "howItWorks": "How it works",
+        "contact": "Contact us"
+    },
+    
+    "home": {
+        "title": "SMART DECISIONS",
+        "mainText1": "YOU CAN HAVE DATA WITHOUT<br>INFORMATION, ",
+        "mainText2": "BUT YOU'LL NEVER HAVE<br>INFORMATION WITHOUT DATA”",
+        "viewMore": "View More"
+    },
+
+    "about": {
+        "title": "About iMetriq",
+        "text1": "AT IMETRIQ WE HELP BRANDS DRIVE THROUGH THEIR DIGITAL TRANSFORMATION DATA PROCESSES TO ENSURE A SOLID SET UP THAT WILL THEN MAXIMIZE ITS USE TOWARDS BI.",
+        "text2": "OUR PLATFORM SEEKS TO BREAK INDUSTRY PARADIGMS THROUGH PROCESS SOPHISTICATION. UNIFYING AND CONNECTING DATA TO UNLOCK ACTIONABLE INSIGHTS THAT GUIDE BUSINESSES IN THEIR DECISION MAKING PROCESS."
+    },
+
+    "solutions": {
+        "title1": "MAKING IT RELEVANT<br>FOR YOUR COMPANY WHILE<br>",
+        "title2": "MAXIMIZING<br>ROI",
+        "titleIcon": "MAXIMIZING ROI",
+        "img1": "Connect & Unify Data",
+        "contentTitle1": "Connect<br>& Unify Data",
+        "contentDesc1": "Comprehensive data architecture developed within our data warehouse via API connections.",
+        "img2": "Data Science & Reporting",
+        "contentTitle2": "Data Science<br>& Reporting",
+        "contentDesc2": "UX UI visualizations focused on data accessibility making insights easily discoverable.",
+        "img3": "Data Modelling",
+        "contentTitle3": "Data<br>Modelling",
+        "contentDesc3": "Predictive and deductive modelling to anticipate future trends via and better optimize your business efforts.",
+        "img4": "Planning & Approval system",
+        "contentTitle4": "Planning<br>& Approval system",
+        "contentDesc4": "Centralized information within an integrated system where you will find from historic planning data to approval documentation."
+    },
+    
+    "howItWorks": {
+        "title": "WE FOLLOW A SIMPLE PATH",
+
+        "stepTitle1": "Audit",
+        "stepTitle2": "Visualize",
+        "stepTitle3": "Optimize",
+
+        "chip1": "Data start",
+        "chip2": "Data visualize",
+        "chip3": "Data analyze",
+        "chip4": "Process automation",
+
+        "text1": "Architecture development and next steps towards your data journey including a comprehensive migration plan and strategy to bring your data into a warehouse.”",
+        "text2": "Unleash the power of data via dashboards, reports, and data storytelling.",
+        "text3": "Discover new relationships in your data, building new metrics, or incorporate new data sources from your internal organization, or third party vendors.",
+        "text4": "Automatic real time alerts that will allow to easily control and optimize your efforts."
+    },
+
+    "contact": {
+        "title": "STAY IN THE<br>DATA KNOWLEDGE",
+        "subtitle": "Request a demo",
+        "name": "Full Name",
+        "email": "email",
+        "submit": "Request",
+        "terms": "Terms & Conditions",
+        "privacy": "Privacy Policy"
+    }
+}
